@@ -7,18 +7,15 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
+    title: 'A Family Calendar',
+    description: `What if you could sync up calindars of your family and generate
+    conflicts and reminders every week?`,
     imgSrc: '/static/images/google.png',
     href: 'https://www.google.com',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
+    title: 'Remote 3-d Printing',
+    description: `A project to make 3-d printing affordable for hobbyists. Manage your 3-d printing jobs remotely with as minimum as $250 investment in accessories and a tiny bit of interest in electronics and programming`,
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/the-time-machine',
   },
