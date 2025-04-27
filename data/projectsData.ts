@@ -16,7 +16,7 @@ const projectsData: Project[] = [
   {
     title: 'Remote 3-d Printing',
     description: `A project to make 3-d printing affordable for hobbyists. Manage your 3-d printing jobs remotely with as minimum as $250 investment in accessories and a tiny bit of interest in electronics and programming`,
-    imgSrc: '/static/images/3dprinting.jpg',
+    imgSrc: '/static/images/3dprinting.png',
     href: '',
   },
 ]
