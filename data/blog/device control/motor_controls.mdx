@@ -1,0 +1,87 @@
+---
+title: Motor Control Strategies
+date: '2025-03-17'
+tags: ['Product Development', 'Motor Control']
+draft: false
+summary: 'various motor control strategies—such as speed control, torque control, and position control.'
+authors: ['Kausi']
+images: ['/static/images/motorcontrols.png', '/static/images/motorcontrols1.png', '/static/images/motorcontrols2.png', '/static/images/motorcontrols3.png', '/static/images/motorcontrols4.png']
+---
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/motorcontrols.png" 
+  alt="Motor controls" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+
+# Understanding Motor Control Strategies for Practical Applications
+Understanding various motor control strategies—such as speed control, torque control, and position control—is crucial for numerous applications across industries. My recent articles have focused on systems integration and calibration. In this context, how do motor control strategies contribute to system integration and calibration? While many real-world applications utilize all three strategies, each method addresses distinct needs, and their selection is based on system requirements such as precision, stability, and response time. Thus, systems engineers must grasp these strategies and their applications.
+
+I developed this straightforward yet often overlooked knowledge base for a robotics team I coached last year. Recently, I recognized that it also serves as a useful guide for systems requirement engineers, manufacturing personnel, and entry-level engineers who may not be directly involved in component design and development. Therefore, I wanted to share this with a broader audience.
+## Torque Control
+
+The torque control strategy controls the motor output torque by controlling the current supplied to the motor. Since torque is directly proportional to current in most electric machines, it is obvious that precise current control allows accurate torque performance. The basic strategy involves using a torque reference signal to adjust motor current and is typically implemented using Field-Oriented Control (FOC) or Direct Torque Control (DTC). Generally, current sensors are used to measure phase currents, and a controller is designed and implemented (e.g., PI controller) to adjust the current to maintain a desired torque.
+
+_**Design Approach**_
+The DTC approach uses stator flux and torque measurements of the electric machine without direct control of the stator currents. The voltage space vectors (switching states) are applied directly to the inverter. The advantage of this design is its fast and dynamic response at the cost of introducing torque ripples. Also, the main advantage of this method over FOC is in the field-weakening region (Hughes & Drury, 2019).
+
+The FOC approach converts the instantaneous stator current into direct (flux current) and quadrature (torque-producing) components. Thus, it is also called vector control (Hughes & Drury, 2019). A current controller (PI-based) is typically used to regulate the quadrature component to achieve the desired torque.
+
+The advantages of this strategy include faster response to changes in load, smooth torque control, and avoiding any jerks. This is also essential for closed-loop speed and position control. The challenges with this strategy include non-linearity due to saturation effects and thermal variations. Thus, the applications that require direct force management usually utilize this strategy. A few examples are:
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/motorcontrols1.png" 
+  alt="Motor controls" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+
+## Speed Control
+
+Speed control strategy involves controlling the voltage or frequency using a controller (e.g., PI controller with anti-windup compensation) to maintain the desired speed. This strategy helps to maintain a desired speed at varying loads. Typically, the speed is measured using encoders, resolvers, or Hall sensors. This can be implemented using V/f control (scalar) or FOC-based speed control (vector).
+
+The advantages include precision, stability, and energy efficiency. The challenges include over- or undershooting due to load disturbances, causing slow response in high-inertial-load applications.
+
+A few applications that use speed control are:
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/motorcontrols2.png" 
+  alt="Motor controls" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+
+## Position Control
+
+The position control strategy involves moving the motor to and holding a specific position with high accuracy. Typically, the control implementation includes several control loops to track a desired position. Sensors like encoders and resolvers are generally used to measure real-time position information. Depending on the application and the desired accuracy, a combined torque and speed control strategy can be used to achieve more accurate motion control. 
+
+The advantages include high accuracy and smooth operation. Whereas, the challenges include drift and oscillations with load disturbances.
+
+A few applications that use this strategy are:
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/motorcontrols3.png" 
+  alt="Motor controls" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+
+A high-level comparison of these control designs is below
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/motorcontrols4.png" 
+  alt="Motor controls" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+
+For more information on the inner and outer loops of speed, position control, and implementation, please take a look at the provided references.
+## References
+  - Austin Hughes, Bill Drury. (2019). Electric Motors and Drives (Fifth Edition)
+  - Mastering motor control: motor control 101. https://www.embedded.com/mastering-motor-control-motor-control-101/
