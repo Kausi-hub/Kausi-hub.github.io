@@ -55,7 +55,7 @@ I used Google Colab and selected the "run-time type" as – CPU. Then I installe
 
 Once these libraries are installed, run the following code implementation:
 
-Code
+https://colab.research.google.com/drive/1iOfh-r7P72AkS-M10VQFWOO2Wdy2cxmg#scrollTo=QiFynKQdY9T_&line=9&uniqifier=1
 
 Results
 
@@ -63,9 +63,24 @@ The above plot shows the relationship between thermal cycles and on-state resist
 
 I have used synthetic data to train the model. If you use real data, use the following code snippet to import and sanitize the data.
 
-Code
+Python code reference:
+---
+# Load your dataset (Modify file name if needed)
+data = pd.read_csv("your_sensor_data.csv")
 
-References:
+# Display first few rows to verify
+print(data.head())
+
+# Ensure relevant columns exist
+required_columns = ['Thermal_Cycles', 'Max_Temperature', 'Delta_Temperature', 'Rds_on', 'Threshold_Voltage_Drift', 'Wear_Condition']
+missing_cols = [col for col in required_columns if col not in data.columns]
+if missing_cols:
+    print(f"Missing columns: {missing_cols}")
+else:
+    print("All required columns are present.")
+---
+
+## References:
 
 scikit-learn, https://scikit-learn.org/stable/
 Safwan Mahmood Al-Selwi, Mohd Fadzil Hassan, Said Jadid Abdulkadir, Amgad Muneer, Ebrahim Hamid Sumiea, Alawi Alqushaibi, Mohammed Gamal Ragab, (2024), RNN-LSTM: From applications to modeling techniques and beyond—Systematic review, Journal of King Saud University - Computer and Information Sciences, 36(5), https://doi.org/10.1016/j.jksuci.2024.102068.
