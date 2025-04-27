@@ -19,9 +19,9 @@ I developed this straightforward yet often overlooked knowledge base for a robot
 The torque control strategy controls the motor output torque by controlling the current supplied to the motor. Since torque is directly proportional to current in most electric machines, it is obvious that precise current control allows accurate torque performance. The basic strategy involves using a torque reference signal to adjust motor current and is typically implemented using Field-Oriented Control (FOC) or Direct Torque Control (DTC). Generally, current sensors are used to measure phase currents, and a controller is designed and implemented (e.g., PI controller) to adjust the current to maintain a desired torque.
 
 _**Design Approach**_
-The DTC approach uses stator flux and torque measurements of the electric machine without direct control of the stator currents. The voltage space vectors (switching states) are applied directly to the inverter. The advantage of this design is its fast and dynamic response at the cost of introducing torque ripples. Also, the main advantage of this method over FOC is in the field-weakening region (Hughes & Drury, 2019).
+The DTC approach uses stator flux and torque measurements of the electric machine without direct control of the stator currents. The voltage space vectors (switching states) are applied directly to the inverter. The advantage of this design is its fast and dynamic response at the cost of introducing torque ripples. Also, the main advantage of this method over FOC is in the field-weakening region [^1].
 
-The FOC approach converts the instantaneous stator current into direct (flux current) and quadrature (torque-producing) components. Thus, it is also called vector control (Hughes & Drury, 2019). A current controller (PI-based) is typically used to regulate the quadrature component to achieve the desired torque.
+The FOC approach converts the instantaneous stator current into direct (flux current) and quadrature (torque-producing) components. Thus, it is also called vector control [^1]. A current controller (PI-based) is typically used to regulate the quadrature component to achieve the desired torque.
 
 The advantages of this strategy include faster response to changes in load, smooth torque control, and avoiding any jerks. This is also essential for closed-loop speed and position control. The challenges with this strategy include non-linearity due to saturation effects and thermal variations. Thus, the applications that require direct force management usually utilize this strategy. A few examples are:
 
@@ -52,6 +52,6 @@ A high-level comparison of these control designs is below
 ![Motor Controls4](/static/images/motorcontrols4.png)
 
 For more information on the inner and outer loops of speed, position control, and implementation, please take a look at the provided references.
-## References
-  - Austin Hughes, Bill Drury. (2019). Electric Motors and Drives (Fifth Edition)
-  - Mastering motor control: motor control 101. https://www.embedded.com/mastering-motor-control-motor-control-101/
+
+[^1]: Austin Hughes, Bill Drury. (2019). Electric Motors and Drives (Fifth Edition)
+[^2]: Mastering motor control: motor control 101. https://www.embedded.com/mastering-motor-control-motor-control-101/
