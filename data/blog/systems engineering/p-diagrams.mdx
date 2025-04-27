@@ -28,13 +28,15 @@ A P-diagram includes five components in addition to the system or process being 
   - Control Factors: Control factors are design elements and strategies considered by designers to develop a robust system. Examples include system calibrations, component material types, initialization strategies, and control parameters used to achieve optimum system performance despite noise factors.
   - Outputs: Outputs represent the expected system behaviors, such as functional performance, response times, or metrics that gauge customer experience. They are typically defined by stakeholder requirements.
   - Error States: Error states refer to unintended system behaviors, including failure modes, safety risks, or poor user experiences. It is crucial to consider specific failure symptoms and their potential causes when identifying error states instead of merely negating the expected outputs.
+
 <Image 
   src="/Kausi-hub.github.io/static/images/elementsofP.png" 
   alt="Elements of P-Diagram" 
-  width={512} 
-  height={256} 
+  width={256} 
+  height={128} 
   priority 
 />
+
 While it is the systems design engineer’s responsibility to develop this in a product development setting, requirement engineers, component design engineers, and V&V engineers must understand these influencing factors to assist in failure mode analysis and root cause identification analysis.
 ## Application of P-Diagrams in Product Development
 
@@ -45,6 +47,7 @@ To demonstrate the application of a P-diagram, I will consider a driveline disco
 ### P-Diagram Elements
 
 When transitioning between modes, a vehicle control system relies on input from an automatic state selection algorithm based on the vehicle controls. So, the inputs and control parameters vary based on the mode selection approach. However, to simplify the p-diagram approach, we will ignore the failure modes from the vehicle controls that might impact the mode-switching patterns.
+
 <Image 
   src="/Kausi-hub.github.io/static/images/ElementsofDisco.png" 
   alt="Elements of Disconnect" 
@@ -52,7 +55,9 @@ When transitioning between modes, a vehicle control system relies on input from 
   height={128} 
   priority 
 />
+
 Each error state may stem from different causes and could impact the system’s performance and safety. By mapping this system into a P-diagram, development teams can develop failure modes and potential emergent behavior from system interactions. These insights can guide teams in effective design verification & validation and robustness testing.
+
 <Image 
   src="/Kausi-hub.github.io/static/images/pdiagdisco.png" 
   alt="Disconnect P-Diagram" 
@@ -60,7 +65,9 @@ Each error state may stem from different causes and could impact the system’s 
   height={128} 
   priority 
 />
+
 By mapping this system into a P-diagram, development teams can develop failure modes and potential emergent behavior from system interactions. These insights can guide an effective design validation, verification planning, and robustness testing.
+
 <Image 
   src="/Kausi-hub.github.io/static/images/sourcesoferror.png" 
   alt="Sources of Error" 
@@ -68,6 +75,7 @@ By mapping this system into a P-diagram, development teams can develop failure m
   height={128} 
   priority 
 />
+
 ## Conclusion
 
 P-diagrams are a practical tool that enables a robust design process and effective failure mode identification and root cause analysis. The benefits are higher when this tool is used early in the product development process, particularly during requirements definition and functional decomposition. This tool will not replace the detailed design tools your organization uses or the design effort by the development teams. However, their value lies in enabling the engineering teams to visualize and proactively address the variability inherent in complex systems.
