@@ -1,0 +1,71 @@
+---
+title: Enhancing System Performance Using Calibration
+date: '2025-02-23'
+tags: ['system calibration', 'data analysis']
+draft: false
+summary: 'In this article, I discuss how machine learning and data analysis techniques can be used to enhance system calibration.'
+authors: ['Kausi']
+images: ['/static/images/systemcalibration.png']
+---
+
+<Image 
+  src="/Kausi-hub.github.io/static/images/systemcalibration.png" 
+  alt="System Calibration" 
+  width={512} 
+  height={256} 
+  priority 
+/>
+# Enhancing System Performance Using Calibration - A Use Case of Predicting Wear in Inverter Power Modules Due to Thermal Cycling
+
+In my previous articles, I discussed how data analysis methods can enhance system integration and calibration using specific examples of electric drive systems. One method I discussed is real-time data analysis and failure detection. In this one, I considered this methodology and laid out the framework using a machine-learning model to detect component wear due to thermal cycling.
+
+The objective is to predict the degradation of semiconductor devices in an inverter due to repeated thermal cycling. This wear-out can lead to bond wire lift-off, solder fatigue, or increased junction resistance.
+
+## Business Impact
+
+The methodology enables predictive maintenance, extending the life of electronics by reducing unexpected failures in the field. It also optimizes thermal management strategies, reducing unnecessary derating events, thus increasing system efficiency.
+
+## Test Data and Usage Profiles
+
+The model would require historical and real-time data from inverters operating in the field or controlled test environments. Key metrics include temperature metrics - junction temperature, cover temperature, ambient temperature, rate of temperature change; electrical parameters - on-state resistance (Rds_on) increase over time, threshold voltage drift current and voltage waveforms, switching losses, and efficiency degradation. I considered the usage profiles, including the number of thermal cycles, duty cycles, and power load variations.
+
+## Model Selection and Training Process
+
+We can train a Recurrent Neural Network (RNN) or Long Short-Term Memory (LSTM) model on the time-series data to recognize patterns of electrical degradation over time. If the dataset is not reasonably sequential, we can use other models like XGBoost.
+
+We can train the model on historical component failure data from accelerated life tests and real-world operations. In this use case, we will use a synthetic data set. Use anomaly detection techniques to identify deviations from nominal performance. Label data based on failure modes like bond wire degradation and increased conduction losses.
+
+## Let's dig into the implementation specifics:
+
+We will generate synthetic data with features including temperature cycles, resistance drift, and threshold voltage. We'll simulate a dataset where Temperature (°C) and Cycle Count influence Rds_on (ON resistance). We'll label data points as Healthy (0) or Degraded (1) when Rds_on exceeds a threshold. Then, we will define the LSTM Model – A simple sequential model to learn wear trends. Finally, we'll train an LSTM network to predict whether the component is degraded based on historical data and plot predictions to show how wear progresses over time.
+
+For real-time monitoring and predictive maintenance, we can extend this model by:
+
+-- Continuously collecting temperature cycles, electrical parameters, and wear indicators.
+
+-- Deploying the trained model on a device or a virtual system.
+
+-- If the model predicts degradation, it can suggest derating, cooling adjustments, or scheduled maintenance before failure.
+
+## Implementation
+
+I used Google Colab and selected the "run-time type" as – CPU. Then I installed libraries including Scikit, pandas, matplot, numpy -
+
+!pip install torch torchvision numpy pandas scikit-learn matplotlib
+
+Once these libraries are installed, run the following code implementation:
+
+Code
+
+Results
+
+The above plot shows the relationship between thermal cycles and on-state resistance. Red points indicate degraded components, while blue points indicate healthy components. As thermal cycles increase, Rds_on also increases, leading to component wear.
+
+I have used synthetic data to train the model. If you use real data, use the following code snippet to import and sanitize the data.
+
+Code
+
+References:
+
+scikit-learn, https://scikit-learn.org/stable/
+Safwan Mahmood Al-Selwi, Mohd Fadzil Hassan, Said Jadid Abdulkadir, Amgad Muneer, Ebrahim Hamid Sumiea, Alawi Alqushaibi, Mohammed Gamal Ragab, (2024), RNN-LSTM: From applications to modeling techniques and beyond—Systematic review, Journal of King Saud University - Computer and Information Sciences, 36(5), https://doi.org/10.1016/j.jksuci.2024.102068.
