@@ -2,8 +2,8 @@
 const siteMetadata = {
   title: 'Systems and Strategy',
   author: 'Kausi',
-  headerTitle: 'Build and Lead',
-  description: 'A knowledge base of systems engineering and strategy',
+  headerTitle: 'Systems and Strategy: Leadership in Layers',
+  description: 'A knowledge base of systems engineering, strategy, leadership, process, ...',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://Kausi-hub/Kausi-hub.github.io',
