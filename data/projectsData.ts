@@ -12,7 +12,7 @@ const projectsData: Project[] = [
     For example, software developers: number of bugs/issues; validation: number of unidentified issues; integration & calibration: system performance maturity achieved, etc.
     However, some key disciplines like requirements development and architecture development, which are the foundation for the product, typically don't have objective metrics.
     So, I decided to develop a tool that enables teams to feed in text-based requirements and generate a satisfaction score based on the completeness, correctness, and clarity?`,
-    imgSrc: '/static/images/calendarapp.png',
+    imgSrc: '/static/images/req_analyzer.png',
     href: 'https://github.com/Kausi-hub/Requirement_analyzer_llm',
   },
   {
