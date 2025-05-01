@@ -16,16 +16,16 @@ const projectsData: Project[] = [
     href: 'https://github.com/Kausi-hub/Requirement_analyzer_llm',
   },
   {
+    title: 'Remote 3-D Printing',
+    description: `A project to make 3D printing affordable for hobbyists. Manage your 3D printing jobs remotely with as little as a $250 investment in accessories and a tiny bit of interest in electronics and programming`,
+    imgSrc: '/static/images/3dprinting.png',
+    href: '',
+  },
+  {
     title: 'A Family Calendar',
     description: `What if you could sync up the calendars of your family and generate
     conflicts and reminders every week?`,
     imgSrc: '/static/images/calendarapp.png',
-    href: '',
-  },
-  {
-    title: 'Remote 3-D Printing',
-    description: `A project to make 3D printing affordable for hobbyists. Manage your 3D printing jobs remotely with as little as a $250 investment in accessories and a tiny bit of interest in electronics and programming`,
-    imgSrc: '/static/images/3dprinting.png',
     href: '',
   },
 ]
