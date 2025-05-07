@@ -6,7 +6,7 @@ export default function ExcelExample() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('/data/mydata/motion_control_system_requirements.xlsx');
+      const res = await fetch('/data/blog/systems engineering/LLM/motion_control_system_requirements.xlsx');
       const arrayBuffer = await res.arrayBuffer();
       const workbook = XLSX.read(arrayBuffer, { type: 'array' });
 
