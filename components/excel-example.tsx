@@ -141,46 +141,48 @@ const ExcelExample = () => {
       )}
 
       {tableData.length > 0 && (
-        <table className="min-w-full table-auto border-collapse text-sm">
-          <tbody>
-            {tableData.map((row, rIdx) => (
-              <tr key={rIdx} className="even:bg-gray-50">
-                {row.map((cell, cIdx) => {
-                  const cellKey = `${rIdx}-${cIdx}`
-                  if (renderedCells.has(cellKey)) return null
+        <div className="max-h-[400px] overflow-y-auto">
+          <table className="min-w-full table-auto border-collapse text-sm">
+            <tbody>
+              {tableData.map((row, rIdx) => (
+                <tr key={rIdx} className="even:bg-gray-50">
+                  {row.map((cell, cIdx) => {
+                    const cellKey = `${rIdx}-${cIdx}`
+                    if (renderedCells.has(cellKey)) return null
 
-                  const mergeInfo = isMergedCell(rIdx, cIdx)
+                    const mergeInfo = isMergedCell(rIdx, cIdx)
 
-                  if (mergeInfo) {
-                    if (!mergeInfo.isStart) return null
-                    for (let r = 0; r < mergeInfo.rowSpan; r++) {
-                      for (let c = 0; c < mergeInfo.colSpan; c++) {
-                        renderedCells.add(`${rIdx + r}-${cIdx + c}`)
+                    if (mergeInfo) {
+                      if (!mergeInfo.isStart) return null
+                      for (let r = 0; r < mergeInfo.rowSpan; r++) {
+                        for (let c = 0; c < mergeInfo.colSpan; c++) {
+                          renderedCells.add(`${rIdx + r}-${cIdx + c}`)
+                        }
                       }
+                      return (
+                        <td
+                          key={cellKey}
+                          rowSpan={mergeInfo.rowSpan}
+                          colSpan={mergeInfo.colSpan}
+                          className="border px-4 py-2 text-black"
+                        >
+                          {cell}
+                        </td>
+                      )
                     }
+
+                    renderedCells.add(cellKey)
                     return (
-                      <td
-                        key={cellKey}
-                        rowSpan={mergeInfo.rowSpan}
-                        colSpan={mergeInfo.colSpan}
-                        className="border px-4 py-2 text-black"
-                      >
+                      <td key={cellKey} className="border px-4 py-2 text-black">
                         {cell}
                       </td>
                     )
-                  }
-
-                  renderedCells.add(cellKey)
-                  return (
-                    <td key={cellKey} className="border px-4 py-2 text-black">
-                      {cell}
-                    </td>
-                  )
-                })}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  })}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
 
       {tableData.length > 0 && (
