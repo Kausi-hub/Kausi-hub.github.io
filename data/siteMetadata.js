@@ -59,7 +59,18 @@ const siteMetadata = {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     provider: 'giscus', // supported providers: giscus, utterances, disqus
-    giscusConfig: {},
+    giscusConfig: {
+      repo: 'Kausi-hub/Kausi-hub.github.io',
+      repositoryId: 'R_kgDOJ2v0Xg',
+      category: 'General',
+      categoryId: 'DIC_kwDOJ2v0Xc4CR1r8',
+      mapping: 'pathname', // supported options: pathname, url, title
+      reactionsEnabled: '1', // Emoji reactions
+      emitMetadata: '0', // Metadata tracking
+      inputPosition: 'top', // Position of the comment box
+      theme: 'light', // Theme of the comment box
+      lang: 'en', // Language of the comment box
+    },
   },
   search: {
     provider: 'kbar', // kbar or algolia
