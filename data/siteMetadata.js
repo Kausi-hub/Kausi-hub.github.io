@@ -60,10 +60,10 @@ const siteMetadata = {
     // https://vercel.com/docs/environment-variables
     provider: 'giscus', // supported providers: giscus, utterances, disqus
     giscusConfig: {
-      repo: 'Kausi-hub/Kausi-hub.github.io',
-      repositoryId: 'R_kgDOJ2v0Xg',
-      category: 'General',
-      categoryId: 'DIC_kwDOJ2v0Xc4CR1r8',
+      repo: process.env.NEXT_PUBLIC_GISCUS_REPO ?? '',
+      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID ?? '',
+      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? '',
+      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
       mapping: 'pathname', // supported options: pathname, url, title
       reactionsEnabled: '1', // Emoji reactions
       emitMetadata: '0', // Metadata tracking
