@@ -118,12 +118,12 @@ const ExcelExample = () => {
 
       {!error && sheets.length > 1 && (
         <div className="mb-4">
-          <label htmlFor="sheet-select" className="mr-2 font-medium">
+          <label htmlFor="sheet-select" className="mr-2 font-medium text-black">
             Select Sheet:
           </label>
           <select
             id="sheet-select"
-            className="rounded border px-2 py-1"
+            className="rounded border px-2 py-1 text-black"
             value={selectedSheet || ''}
             onChange={handleSheetChange}
           >
