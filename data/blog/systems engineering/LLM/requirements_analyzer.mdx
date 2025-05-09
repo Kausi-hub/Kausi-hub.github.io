@@ -9,11 +9,13 @@ images: ['/static/images/req_analyzer.png']
 ---
 
 # How Effective Requirements Analysis Can Cut Engineering Development Costs by 30%
-During product development, we often focus heavily on validation metrics—test coverage, bug rates, and release velocity. However, when activities like requirements development and systems architecture are involved, measurable insights are often underemphasized. These areas are typically guided by experience and intuition rather than objective metrics.
-Over the last decade, working across multiple engineering teams, I noticed this gap remained a persistent topic of discussion. This constant struggle inspired me to develop a Requirements Analyzer tool: an automated approach to quantifying the quality of text-based requirements by measuring their completeness, correctness, and clarity.
+In the world of product development, we often focus heavily on validation metrics—test coverage, bug rates, release velocity. But when it comes to foundational activities like requirements development and systems architecture, measurable insights are often under emphasized. These areas are typically guided by experience and intuition rather than objective metrics.
+
+Over the last decade, working across multiple engineering teams, I noticed this gap remained a persistent topic of discussion. This constant struggle inspired me to develop a Requirements Analyzer tool—a way to quantify the quality of text-based requirements by measuring their completeness, correctness, and clarity.
 ## The Business Case: Reducing Manual Review Overhead
-According to research, teams spend nearly 20% of development time [^1] on requirements-related activities, including requirements development and multiple rounds of stakeholder reviews. While necessary, these reviews are time-consuming and often subjective. 
-The Requirements Analyzer streamlines this process by automating the evaluation of requirement quality. Based on internal trials, it can significantly reduce manual stakeholder review time, resulting in substantial savings across large programs.
+According to research, teams spend nearly 20% of development time on requirements-related activities including requirements development to multiple rounds of stakeholder reviews [^1]. Requirement and design reviews are a necessary as part of static checks providing an opportunity to identify defects early and to ensure that all requirements are captured. The reviewers add value to the quality of requirements by checking the verifiability, comprehensibility, traceability, and adaptability of the authored [^2]. requirements. These stakeholder reviews typically include a moderator, a scribe, the authors, and the reviewers. So, the effort can be anywhere from 4 person hours to 15 person hours depending on the organizational structure and RASIC. Thus, these reviews are not only time-consuming but often highly subjective.  
+
+By automating the evaluation of requirement quality, the Requirements Analyzer streamlines this process. Based on internal trials, it can reduce manual stakeholder review time significantly, resulting in substantial savings across large programs.
 ### How the Tool Works
 The tool accepts text-based requirement documents as input. Leveraging the OpenAI API, it analyzes each requirement for:
   - Correctness: Is the requirement technically sound and atomic enough?
@@ -32,5 +34,5 @@ As a demonstration, I tested the tool using safety requirements for a motion con
 ## Conclusion
 By integrating AI-driven feedback into early development stages, this tool empowers teams to write better requirements, faster. It bridges the long-standing gap in objectively assessing requirement quality, saving valuable engineering time and cost.
 If your team is still relying solely on manual reviews to validate requirement quality, it might be time to explore smarter, scalable solutions like this one.
-[^1]: Vogel M. et al. (2020, August 12). Metrics in automotive software development: A systematic literature review. https://doi.org/10.1002/smr.2296
-[^2]: Jama Software. The essential guide to requirement management and traceability. https://www.jamasoftware.com/requirements-management-guide/requirements-gathering-and-management-processes/how-long-do-requirements-take/
+[^1]: Jama Software. The essential guide to requirement management and traceability. https://www.jamasoftware.com/requirements-management-guide/requirements-gathering-and-management-processes/how-long-do-requirements-take/
+[^2]: Software Engineering 10th Edition. https://software-engineering-book.com/web/requirements-reviews/. 
