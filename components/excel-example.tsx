@@ -1,34 +1,34 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
-import * as XLSX from 'xlsx';
+import { useEffect, useState } from 'react'
+import * as XLSX from 'xlsx'
 
 interface ExcelRow {
-  [key: string]: string | number;
+  [key: string]: string | number
 }
 
 const ExcelExample = () => {
-  const [data, setData] = useState<ExcelRow[]>([]);
+  const [data, setData] = useState<ExcelRow[]>([])
 
   useEffect(() => {
     const fetchExcel = async () => {
-      const res = await fetch('/mydata/requirements_sample.xlsx');
-      const arrayBuffer = await res.arrayBuffer();
-      const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+      const res = await fetch('/mydata/requirements_sample.xlsx')
+      const arrayBuffer = await res.arrayBuffer()
+      const workbook = XLSX.read(arrayBuffer, { type: 'array' })
 
-      const sheetName = workbook.SheetNames[0];
-      const worksheet = workbook.Sheets[sheetName];
-      const jsonData: ExcelRow[] = XLSX.utils.sheet_to_json(worksheet);
-      setData(jsonData);
-    };
+      const sheetName = workbook.SheetNames[0]
+      const worksheet = workbook.Sheets[sheetName]
+      const jsonData: ExcelRow[] = XLSX.utils.sheet_to_json(worksheet)
+      setData(jsonData)
+    }
 
     if (typeof window !== 'undefined') {
-      fetchExcel();
+      fetchExcel()
     }
-  }, []);
+  }, [])
 
   return (
-    <div className="overflow-x-auto mt-6 rounded border border-gray-200">
+    <div className="mt-6 overflow-x-auto rounded border border-gray-200">
       <table className="min-w-full table-auto border-collapse text-sm">
         <thead className="bg-gray-100">
           <tr>
@@ -53,7 +53,7 @@ const ExcelExample = () => {
         </tbody>
       </table>
     </div>
-  );
-};
+  )
+}
 
-export default ExcelExample;
+export default ExcelExample
