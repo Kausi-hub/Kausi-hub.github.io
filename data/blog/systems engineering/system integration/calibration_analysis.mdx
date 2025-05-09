@@ -16,34 +16,26 @@ I discussed a few methods and advantages of system integration in my previous ar
 ## Data Analysis Methods
 Since developmental calibration often requires extensive experimentation, it generates large amounts of data. Efficient data processing techniques are essential for analyzing this data and extracting valuable performance insights. Below, I list a few key data analysis methods to accelerate EDU calibration. In a follow-up article, I will publish more details about each section.
 ### Real-Time Data Analysis
-
 Several data processing tools available in the market can analyze test data in real-time to measure system performance. Additionally, organizations can proactively invest in developing customized tools for their product-specific calibration. This reduces engineers' time manually reviewing test logs and finding patterns to make decisions. Most of the time, organizations choose tools that fit into their current tool set. However, I highly recommend that the experts weigh the cost savings over the long term rather than looking at near-term benefits while selecting the tools. A few advantages of using real-time data analysis tools in the EV drive unit process include live efficiency mapping, load condition monitoring, and thermal management optimization.
 ### Automated Anomaly Detection
-
 While real-time analysis tools give an edge in data analysis, machine learning algorithms and statistical methods can take you an extra mile by way of prognosis - detecting deviations from expected performance and flagging potential calibration or integration issues automatically. This helps engineers focus on solving critical problems rather than manually sifting through large datasets. Some example benefits in the EDU calibration include:
-
   - Sensor Data Outliers: Algorithms can identify inconsistencies in current, voltage, and temperature estimations and measurements, highlighting faulty sensors or unexpected control responses that require attention. Some of the statistical methods that we can use are mean, RMS, threshold analysis, latency detection, etc.
   - Fault Prediction: Machine learning models can analyze historical data to detect trends indicating potential failures, such as degraded electrical components over time, degradation due to stress on the components, thermal stress-related degradation, wear in mechanical components, etc. Additionally, automated anomaly detection can catch unwanted control system behaviors, such as unintended torque commands, incorrect offsets, gains, incorrect inverter switching patterns, etc., which can result in safety-critical concerns.
 ### Optimized Control Parameter Tuning
-
 While the first two methods are purely data-driven, optimization techniques can be physics-based or data-driven. These can be applied to fine-tune control parameters, reducing the need for a high number of manual iterations. Optimized tuning is useful in applications like efficiency maximization, torque control, current control, and thermal management.
 ## Model-Based Optimization Machine Learning for Adaptive Calibration
-
 Using physics-based models, engineers can predict the impact of parameter changes on system performance. These models help identify optimal control settings without extensive physical testing. The effort spent early on in system and control design saves cost and effort in the system integration and calibration process.
 
 The article by Lubos Pirkl [^1] gives very good examples of the usage of AI in CAE. Particularly, the surrogate approach discussed in the article is a design approach that engineering leaders can adopt to save development time. Machine learning algorithms can be used in tandem with the above methods to analyze historical and real-time data to adjust control parameters dynamically. Adaptive calibration using reinforcement learning and neural networks reduces the reliance on constant lookup tables and enables faster tuning.
 
 Model in loop, software in loop, and hardware in loop are three steps that system verification teams can utilize to achieve optimal system performance metrics. However, this comes with a development cost that leaders should consider as a proactive investment.
 ## Automated Sensitivity Analysis
-
 Through statistical techniques, sensitivity analysis can determine which parameters impact the system performance most, allowing engineers to prioritize tuning efforts efficiently. By applying statistical and machine learning techniques, automated sensitivity analysis can reasonably quantify control parameter influence and prioritize parameter tuning.
 
 Sensitivity analysis methods, such as Sobol indices and variance-based decomposition, provide a quantitative measure of how much each parameter affects system outputs [^2]. Consequently, engineers can focus on the most important parameters in their calibration efforts, reducing development time and improving productivity.
 
 Machine learning models can evaluate nonlinear dependencies between parameters and system responses, identifying complex relationships that traditional manual tuning might overlook. Additionally, by varying parameters in a controlled manner, automated sensitivity analysis enables verifying the entire calibration region with less manual intervention.
 ## Conclusion
-
 AI/ML, data analysis, and test automation are transforming the way system integration and calibration are performed to achieve better system performance metrics. By enabling real-time insights and covering a broader calibration space, these methods can particularly be used in EV drive unit calibration to achieve reduced dyno time, faster issue resolution, early defect identification, and enhanced collaboration between component teams.
-
 [^1]: Lubos Pirkl, (2024, January 9). AI for CAE. https://www.linkedin.com/pulse/ai-cfd-lubos-pirkl-jiame/
 [^2]: Valentin, C, (2022, June 20), Sobol Indices to Measure Feature Importance. https://towardsdatascience.com/sobol-indices-to-measure-feature-importance-54cedc3281bc/
