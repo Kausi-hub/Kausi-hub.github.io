@@ -35,7 +35,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                 </div>
               </Bleed>
             </div>
-            <div className="relative pt-10">
+            <div className="relative pt-8">
               <PageTitle>{title}</PageTitle>
             </div>
           </div>
@@ -48,7 +48,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           <footer>
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
               {prev && prev.path && (
-                <div className="pt-4 xl:pt-8">
+                <div className="pt-4 xl:pt-6">
                   <Link
                     href={`/${prev.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -59,7 +59,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                 </div>
               )}
               {next && next.path && (
-                <div className="pt-4 xl:pt-8">
+                <div className="pt-4 xl:pt-6">
                   <Link
                     href={`/${next.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

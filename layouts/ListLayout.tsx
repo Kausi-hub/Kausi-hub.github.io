@@ -124,13 +124,13 @@ export default function ListLayout({
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>
-                    <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
+                    <dd className="text-base leading-5 font-medium text-gray-500 dark:text-gray-400">
                       <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                     </dd>
                   </dl>
                   <div className="space-y-3 xl:col-span-3">
                     <div>
-                      <h3 className="text-2xl leading-8 font-bold tracking-tight">
+                      <h3 className="text-2xl leading-6 font-bold tracking-tight">
                         <Link href={`/${path}`} className="text-gray-900 dark:text-gray-100">
                           {title}
                         </Link>

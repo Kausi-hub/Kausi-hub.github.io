@@ -51,7 +51,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
             <footer>
               <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
                 {prev && prev.path && (
-                  <div className="pt-4 xl:pt-8">
+                  <div className="pt-4 xl:pt-6">
                     <Link
                       href={`/${prev.path}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -62,7 +62,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
                   </div>
                 )}
                 {next && next.path && (
-                  <div className="pt-4 xl:pt-8">
+                  <div className="pt-4 xl:pt-6">
                     <Link
                       href={`/${next.path}`}
                       className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
