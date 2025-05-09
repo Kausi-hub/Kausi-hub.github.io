@@ -12,7 +12,7 @@ const ExcelExample = () => {
 
   useEffect(() => {
     const fetchExcel = async () => {
-      const res = await fetch('/mydata/requirements_sample.xlsx')
+      const res = await fetch('/mydata/motion_control_system_requirements.xlsx')
       const arrayBuffer = await res.arrayBuffer()
       const workbook = XLSX.read(arrayBuffer, { type: 'array' })
 
