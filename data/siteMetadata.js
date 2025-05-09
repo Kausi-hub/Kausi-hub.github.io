@@ -14,7 +14,6 @@ const siteMetadata = {
   email: 'writewidme@gmail.com',
   github: 'https://github.com',
   x: 'https://twitter.com/x',
-  // twitter: 'https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
   linkedin: 'https://www.linkedin.com/in/kausalyap',
@@ -60,21 +59,7 @@ const siteMetadata = {
     // Select a provider and use the environment variables associated to it
     // https://vercel.com/docs/environment-variables
     provider: 'giscus', // supported providers: giscus, utterances, disqus
-    giscusConfig: {
-      // Visit the link below, and follow the steps in the 'configuration' section
-      // https://giscus.app/
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO || '', // embed value
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID || '',
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY || '',
-      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID || '',
-      mapping: 'pathname', // supported options: pathname, url, title
-      reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
-       metadata: '0',
-      theme: 'light',
-      darkTheme: 'transparent_dark',
-      themeURL: '',
-      lang: 'en',
-    },
+    giscusConfig: {},
   },
   search: {
     provider: 'kbar', // kbar or algolia
