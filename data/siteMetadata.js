@@ -91,10 +91,5 @@ const siteMetadata = {
     // },
   },
 }
-  console.log('Giscus env loaded:', {
-  repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
-  repoId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
-  category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
-  categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-})
+
 module.exports = siteMetadata
