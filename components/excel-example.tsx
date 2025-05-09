@@ -44,7 +44,7 @@ const ExcelExample = () => {
 
   return (
     <div className="mt-6 min-h-[200px] border-2 border-dashed border-blue-500 bg-white p-4 shadow">
-      <p className="mb-2 text-sm text-gray-600">📄 Excel Data Preview:</p>
+      <p className="mb-2 text-sm text-gray-600">📄 Requirements Preview:</p>
 
       {error && (
         <div className="text-red-600">
@@ -61,7 +61,7 @@ const ExcelExample = () => {
           <thead className="bg-gray-100">
             <tr>
               {Object.keys(data[0]).map((key) => (
-                <th key={key} className="border px-4 py-2 text-left font-medium">
+                <th key={key} className="border px-4 py-2 text-left font-medium text-black">
                   {key}
                 </th>
               ))}
@@ -71,7 +71,7 @@ const ExcelExample = () => {
             {data.map((row, idx) => (
               <tr key={idx} className="even:bg-gray-50">
                 {Object.values(row).map((val, i) => (
-                  <td key={i} className="border px-4 py-2">
+                  <td key={i} className="border px-4 py-2 text-black">
                     {val}
                   </td>
                 ))}
