@@ -13,10 +13,10 @@ export default function Comments({ slug }: { slug: string }) {
   const commentsConfig: CommentsConfig = {
     provider: 'giscus',
     giscusConfig: {
-      repo: 'Kausi-hub/Kausi-hub.github.io',
-      repositoryId: 'R_kgDOOgIuZQ',
-      category: 'General',
-      categoryId: 'DIC_kwDOOgIuZc4Cp92y',
+      repo: process.env.NEXT_PUBLIC_GISCUS_REPO!,
+      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID!,
+      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY!,
+      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID!,
       //repo: process.env.NEXT_PUBLIC_GISCUS_REPO ?? '',
       //repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID ?? '',
       //category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? '',
