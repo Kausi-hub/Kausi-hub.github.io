@@ -6,8 +6,6 @@ import siteMetadata from '@/data/siteMetadata'
 import type { CommentsConfig } from 'pliny/comments'
 
 export default function Comments({ slug }: { slug: string }) {
-  const [loadComments, setLoadComments] = useState(false)
-
   if (!siteMetadata.comments?.provider) return null
 
   const commentsConfig: CommentsConfig = {
@@ -17,7 +15,7 @@ export default function Comments({ slug }: { slug: string }) {
       repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID ?? '',
       category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? '',
       categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
-      mapping: 'pathname', // Type-safe value
+      mapping: 'pathname',
       reactions: '1',
       metadata: '0',
       theme: 'light',
@@ -27,13 +25,5 @@ export default function Comments({ slug }: { slug: string }) {
     },
   }
 
-  return (
-    <>
-      {loadComments ? (
-        <CommentsComponent commentsConfig={commentsConfig} slug={slug} />
-      ) : (
-        <button onClick={() => setLoadComments(true)}>Load Comments</button>
-      )}
-    </>
-  )
+  return <CommentsComponent commentsConfig={commentsConfig} slug={slug} />
 }
