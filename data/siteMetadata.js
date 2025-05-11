@@ -60,8 +60,8 @@ const siteMetadata = {
     // https://vercel.com/docs/environment-variables
     provider: 'giscus', // supported providers: giscus, utterances, disqus
     giscusConfig: {
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO ?? '',
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID ?? '',
+      repo: 'Kausi-hub/Kausi-hub.github.io',
+      repositoryId: 'R_kgDOJX0v2A',
       category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? '',
       categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
       mapping: 'pathname', // supported options: pathname, url, title
