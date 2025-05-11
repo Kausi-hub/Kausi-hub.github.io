@@ -62,7 +62,7 @@ const siteMetadata = {
     giscusConfig: {
       repo: 'Kausi-hub/Kausi-hub.github.io',
       repositoryId: 'R_kgDOJX0v2A',
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY ?? '',
+      category: 'General',
       categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID ?? '',
       mapping: 'pathname', // supported options: pathname, url, title
       reactionsEnabled: '1', // Emoji reactions
