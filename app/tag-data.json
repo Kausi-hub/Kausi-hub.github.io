@@ -9,9 +9,9 @@
   "strategy": 1,
   "product-design": 1,
   "p-diagrams": 1,
+  "llm": 1,
+  "requirements-engineering": 1,
   "system-calibration": 2,
   "data-analysis": 3,
-  "system-integration": 1,
-  "llm": 1,
-  "requirements-engineering": 1
+  "system-integration": 1
 }
