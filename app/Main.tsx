@@ -14,7 +14,7 @@ export default function Home({ posts }) {
           <h1 className="text-2xl leading-6 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-8 md:text-3xl md:leading-8 dark:text-gray-100">
             Latest
           </h1>
-          <p className="text-lg leading-6 text-gray-500 dark:text-gray-400">
+          <p className="text-2xl leading-6 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
         </div>
