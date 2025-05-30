@@ -1,0 +1,89 @@
+'use client'
+
+import React from 'react'
+import Plot from 'react-plotly.js'
+import { SankeyTrace } from 'plotly.js'
+
+const PlotlySankey: React.FC = () => {
+  const sankeyTrace: SankeyTrace = {
+    type: 'sankey',
+    orientation: 'h',
+    node: {
+      pad: 15,
+      thickness: 20,
+      line: { color: 'black', width: 0.5 },
+      label: [
+        'Start',
+        'Simple problem?',
+        'Use 5 Whys',
+        'Multiple causes?',
+        'Fishbone Diagram',
+        'Complex system?',
+        'Fault Tree Analysis',
+        'Design phase?',
+        'FMEA',
+        'Recurring issue?',
+        '8D Problem Solving',
+        'Prioritize causes?',
+        'Pareto Analysis',
+        'Decision-making needed?',
+        'Kepner-Tregoe',
+        'End',
+      ],
+      color: 'lightgreen',
+    },
+    link: {
+      source: [0, 1, 1, 3, 3, 5, 5, 7, 7, 9, 9, 11, 11, 13],
+      target: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+      value: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+      color: [
+        'blue',
+        'green',
+        'gray',
+        'orange',
+        'lightblue',
+        'purple',
+        'lightgray',
+        'teal',
+        'salmon',
+        'darkgreen',
+        'orange',
+        'pink',
+        'skyblue',
+        'black',
+      ],
+      label: [
+        '→ Simple?',
+        'Yes → 5 Whys',
+        'No → Multiple causes?',
+        'Yes → Fishbone',
+        'No → Complex?',
+        'Yes → FTA',
+        'No → Design phase?',
+        'Yes → FMEA',
+        'No → Recurring?',
+        'Yes → 8D',
+        'No → Prioritize?',
+        'Yes → Pareto',
+        'No → Decision?',
+        'Yes → KT',
+      ],
+    },
+  }
+
+  return (
+    <Plot
+      data={[sankeyTrace]}
+      layout={{
+        title: 'Root Cause Analysis Flow',
+        font: { size: 12 },
+        height: 600, // allows responsive layout
+      }}
+      style={{ width: '100%' }}
+      useResizeHandler
+      config={{ responsive: true }}
+    />
+  )
+}
+
+export default PlotlySankey

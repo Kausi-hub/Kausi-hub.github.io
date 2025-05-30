@@ -5,59 +5,76 @@ tags: ['Leadership', 'systems engineering', 'Change Management', 'Process']
 draft: false
 summary: 'Are you searching for a practical guide, checklist, or framework to help your teams assess and implement changes more effectively? Then, you want to check out the article. It offers clear direction and tools to streamline the project-level change implementation process.'
 authors: ['Kausi']
-images: ['/static/images/CM.png', '/static/images/cm1.png', '/static/images/cm2.png', '/static/images/cm3.png', '/static/images/cm4.png', '/static/images/cm5.png']
+images:
+  [
+    '/static/images/CM.png',
+    '/static/images/cm1.png',
+    '/static/images/cm2.png',
+    '/static/images/cm3.png',
+    '/static/images/cm4.png',
+    '/static/images/cm5.png',
+  ]
 ---
 
 ![Change Management](/static/images/CM.png)
 
 # Project Change Management Process
+
 There are numerous quotes on change, and one of my favorites is by Benjamin Franklin, who said, _“When you are finished changing, you are finished”_. This is as applicable to businesses as it is in our personal lives. If you are in business, you already know that change is inevitable and comes with a cost and risk. Additionally, the statement “change is the only constant” is most appropriate in the current market, where technology and trends are shifting at a rapid pace. Organizations prepare for and adapt to changes in different ways based on the company culture, organizational structure, and their business strategy. A change in a project management context can be defined as a change to the agreed scope, schedule, or resources. Change Management (CM) process in a project context is a mechanism used to initiate, estimate, approve, and implement changes so that the projects remain on schedule and within budget. A project-level change management process can be comprehended in seven key steps: change identification, change request (CR) submission, change impact assessment, Change Control Board (CCB) review, change implementation, validation, and closure [^1]. Often, organizations create a comprehensive CM process to cope with project changes. However, they overlook the significance of an effective CCB and the enablers that improve the process's effectiveness. Therefore, to help organizations get the best out of their established CM processes, in this article, I discussed the key steps and key enablers of a CM process. I also included several templates and frameworks that product development teams can use to maximize the benefits of an established process. Enjoy learning!
+
 ## CCB Review – A Key to Successful Change Implementation
+
 The first step in the CM process is a CR submission. After a CR is submitted, the changes are reviewed by a CCB, which is called a CCB review. To minimize rework in the change implementation stage, it is not only essential to involve key stakeholders in a CCB review but also to clarify the goals of a requested change. Therefore, a strong CCB should be cross-functional and empowered to provide better direction to the implementation teams. Who should be part of a CCB review? The answer to this question depends on the organizational structure and the responsibility matrix. To simplify the list, below is a list of stakeholders that includes the minimum representation. The list should be adapted based on the organizational structure: functional vs project vs hybrid.
 
 ![CCB](/static/images/cm1.png)
 
 ## Merger of RASIC and CM process
+
 One of the fifteen systems engineering principles is, “complex systems are engineered by complex organizations” [3]. Therefore, the uncertainty involved with a change to a complex system is expected. Hence, bringing clarity and alignment among different functions is critical to successful change implementation in complex organizations. Combining a RASIC (Responsible, Accountable, Supportive, Informed, Consulted) matrix with an established CM process is a powerful way to bring clarity and faster decision-making capability. This hybrid framework eliminates bottlenecks by ensuring the right people are involved at the right stages while ensuring alignment across different functions. A sample framework that product development teams can utilize is given below. One can easily modify this framework to adapt to other decision-making models like RAPID (Recommend, Agree, Perform, Input, Decide) or RACI [^2] for improved decision making.
 
 ![RASIC](/static/images/cm2.png)
 
 ## Enablers and Tools to Improve Process Effectiveness
+
 Even the most structured teams with established processes fail to achieve the best results when the right tools are not used. The same rule applies to the change management process as well. So, to achieve the full benefits of a CM process, organizations must consider a few key enablers:
-  - Create automated CR workflows allowing for change tracking.
-  - Establish Program-Level Review to link changes to program timelines and phase gates.
-  - Use system modeling language to trace signal/control/data flow.
-  - Develop checklists to guide engineering teams in standardizing the impact assessments.
-  - Create a cross-functional change review board with systems, hardware, and software present.
-  - Establish discipline-specific CCBs (SW, HW, System).
-  - Use digital tools (e.g., PLM systems) for visibility, traceability, and version control.
-  - Measure efforts spent on fast-track or full CCB reviews to keep the process agile.
-  - Introduce Change Types based on criticality and impact – ex, Minor, Major, Time-critical, etc.
-  - Create requirements traceability matrices.
-  - Consider feedback from the warranty department in the change process.
-  - Track metrics and KPIs like the number of changes implemented, lead time per change, post-production quality issues, etc.
+
+- Create automated CR workflows allowing for change tracking.
+- Establish Program-Level Review to link changes to program timelines and phase gates.
+- Use system modeling language to trace signal/control/data flow.
+- Develop checklists to guide engineering teams in standardizing the impact assessments.
+- Create a cross-functional change review board with systems, hardware, and software present.
+- Establish discipline-specific CCBs (SW, HW, System).
+- Use digital tools (e.g., PLM systems) for visibility, traceability, and version control.
+- Measure efforts spent on fast-track or full CCB reviews to keep the process agile.
+- Introduce Change Types based on criticality and impact – ex, Minor, Major, Time-critical, etc.
+- Create requirements traceability matrices.
+- Consider feedback from the warranty department in the change process.
+- Track metrics and KPIs like the number of changes implemented, lead time per change, post-production quality issues, etc.
+
 ## Product Complexity, Types of Changes, and Triage Process
+
 Products are becoming increasingly complex, and the software content and electronics are scaling up with this increased complexity. In multiple projects I was involved in, I witnessed that teams often struggled to triage whether a customer change involves only hardware, only software, or a combination of both. The reasons for this struggle are mostly due to a lack of systems thinking and ambiguous responsibilities. Lack of systems thinking and decision making by interpreting uncertain information can lead to cognitive biases. Cognitive biases, according to [^3], “are mental errors in judgement under uncertainty caused by our simplified information processing strategies”. Therefore, organizations can overcome these cognitive biases in CM by following a structured and systematic approach to categorize changes and develop an implementation plan. Finally, categorizing a change as hardware, software, or system helps in reducing uncertainty during implementation, resulting in agile implementation. I recommend a five-step approach to categorizing a change. Again, this framework can be adapted based on the nature of the product or process.
-  - Understand the Nature of a CR: To grasp the type and nature of change, ask a few questions during a triage meeting with the systems, software, and hardware leads, which often clarifies the intent.
-    - Does the change affect physical components (e.g., sensors, power modules, PCB layout, connectors)?
-    - Does it change behavior, control logic, or diagnostics?
-    - Is it addressing a performance issue (torque, efficiency, NVH) or a safety/diagnostic concern?
-    - Is it new functionality or a calibration adjustment?
-  - Verify if the change impacts interfaces or timing: Even if the change seems hardware-only or software-only, consider the following:
-    - Timing/latency implications (e.g., ADC sampling delays)
-    - Signal characteristics (e.g., PWM duty cycles, sensor resolution, accuracy)
-    - Dependency on calibration maps or tunable parameters
-  - Leverage System Engineering and Requirements:
-    - Map the change to the impacted system requirements.
-    - Identify which functional blocks are touched (HW/SW interfaces).
-    - Review dependency chains (e.g., a current sensor spec change could affect SW filtering and control response)
-    - Use a Hardware/Software Impact Matrix: Establish a hardware-software impact matrix that can be used to reduce dependency on subject matter experts. An example framework is given below.
-  - Categorize the Change: Finally, categorize the change and document the CR to classify as:
-    - HW-only: Impacts hardware design or components, with no change to software.
-    - SW-only: Affects embedded code or logic, not physical components.
-    - Calibration-only: Involves only parameter tuning.
-    - HW+SW: Both need changes (e.g., I/O pin change, thermal, sensor change).
-    - System-level: Changes span across architecture or multiple domains (e.g., new feature with hardware dependencies and control impact).
+
+- Understand the Nature of a CR: To grasp the type and nature of change, ask a few questions during a triage meeting with the systems, software, and hardware leads, which often clarifies the intent.
+  - Does the change affect physical components (e.g., sensors, power modules, PCB layout, connectors)?
+  - Does it change behavior, control logic, or diagnostics?
+  - Is it addressing a performance issue (torque, efficiency, NVH) or a safety/diagnostic concern?
+  - Is it new functionality or a calibration adjustment?
+- Verify if the change impacts interfaces or timing: Even if the change seems hardware-only or software-only, consider the following:
+  - Timing/latency implications (e.g., ADC sampling delays)
+  - Signal characteristics (e.g., PWM duty cycles, sensor resolution, accuracy)
+  - Dependency on calibration maps or tunable parameters
+- Leverage System Engineering and Requirements:
+  - Map the change to the impacted system requirements.
+  - Identify which functional blocks are touched (HW/SW interfaces).
+  - Review dependency chains (e.g., a current sensor spec change could affect SW filtering and control response)
+  - Use a Hardware/Software Impact Matrix: Establish a hardware-software impact matrix that can be used to reduce dependency on subject matter experts. An example framework is given below.
+- Categorize the Change: Finally, categorize the change and document the CR to classify as:
+  - HW-only: Impacts hardware design or components, with no change to software.
+  - SW-only: Affects embedded code or logic, not physical components.
+  - Calibration-only: Involves only parameter tuning.
+  - HW+SW: Both need changes (e.g., I/O pin change, thermal, sensor change).
+  - System-level: Changes span across architecture or multiple domains (e.g., new feature with hardware dependencies and control impact).
 
 ![Impact Matrix](/static/images/cm3.png)
 
@@ -66,13 +83,15 @@ Products are becoming increasingly complex, and the software content and electro
 <Image alt="Decision Chart" src="/static/images/cm5.png" width={256} height={128} />
 
 ## Advantages of Effective Change Management
+
 The super-arching benefits of a good change management process are improved quality and higher customer trust. These benefits are achieved through several underlying factors.
-  - Fewer Defects: Well-managed changes include structured risk assessments (e.g., DFMEA, PFMEA), which can uncover downstream impacts.
-  - Structured Implementation: Validation (testing, simulation, or inspection) during design and implementation reduces the probability of new defects.
-  - Cross-Functional Visibility: Changes are reviewed by cross-functional teams, including design, manufacturing, validation, and supply chain, enabling a higher probability of risk identification. This alignment reduces rework and enables successful product launches.
-  - Faster and Informed Decision Making: A defined change process enables quicker decision-making, avoiding “band-aid" fixes that often lead to quality issues.
-  - Documentation and Traceability: Documentation, including what was changed, why, and by whom, enables better root cause analysis.
-  - Customer Impact Evaluation: By incorporating “voice-of-the-customer” in the review process, the impact on the end user experience can be managed well.
-[^1]: Change Management Process for a Project. https://www.projectmanagement.com/wikis/396744/change-management-process-for-project#_=_
-[^2]: RACI vs RASIC or RAPID for Decision-Making: throw out the complexity. https://www.orgvue.com/resources/articles/raci-framework-complexity/
-[^3]: INCOSE Systems Engineering Handbook. Fifth Edition. Wiley.
+
+- Fewer Defects: Well-managed changes include structured risk assessments (e.g., DFMEA, PFMEA), which can uncover downstream impacts.
+- Structured Implementation: Validation (testing, simulation, or inspection) during design and implementation reduces the probability of new defects.
+- Cross-Functional Visibility: Changes are reviewed by cross-functional teams, including design, manufacturing, validation, and supply chain, enabling a higher probability of risk identification. This alignment reduces rework and enables successful product launches.
+- Faster and Informed Decision Making: A defined change process enables quicker decision-making, avoiding “band-aid" fixes that often lead to quality issues.
+- Documentation and Traceability: Documentation, including what was changed, why, and by whom, enables better root cause analysis.
+- Customer Impact Evaluation: By incorporating “voice-of-the-customer” in the review process, the impact on the end user experience can be managed well.
+  [^1]: Change Management Process for a Project. https://www.projectmanagement.com/wikis/396744/change-management-process-for-project#_=_
+  [^2]: RACI vs RASIC or RAPID for Decision-Making: throw out the complexity. https://www.orgvue.com/resources/articles/raci-framework-complexity/
+  [^3]: INCOSE Systems Engineering Handbook. Fifth Edition. Wiley.

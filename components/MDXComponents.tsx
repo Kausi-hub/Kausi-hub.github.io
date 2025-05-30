@@ -6,6 +6,7 @@ import Image from './Image'
 import CustomLink from './Link'
 import TableWrapper from './TableWrapper'
 import ExcelClient from './excel-example'
+import PlotlySankeyWrapper from './PlotlySankeyWrapper'
 
 export const components: MDXComponents = {
   Image,
@@ -15,4 +16,5 @@ export const components: MDXComponents = {
   table: TableWrapper,
   BlogNewsletterForm,
   ExcelClient,
+  PlotlySankey: PlotlySankeyWrapper,
 }
