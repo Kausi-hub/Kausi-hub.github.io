@@ -31,6 +31,7 @@ const PlotlySankey: React.FC = () => {
         'End',
       ],
       color: 'lightgreen',
+      arrangement: 'snap',
       y: [0.1, 0.2, 0.2, 1.5, 1.5, 2.5, 2.5, 3.5, 1.1, 1.4, 1.4, 1.7, 1.7, 2.0, 2.0],
     },
     link: {

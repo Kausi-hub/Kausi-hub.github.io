@@ -1,6 +1,8 @@
 {
   "product-development": 4,
   "motor-control": 1,
+  "strategy": 1,
+  "product-design": 1,
   "leadership": 2,
   "delegation": 1,
   "systems-engineering": 7,
@@ -8,8 +10,6 @@
   "process": 1,
   "p-diagrams": 1,
   "root-cause-analysis": 1,
-  "strategy": 1,
-  "product-design": 1,
   "llm": 1,
   "requirements-engineering": 1,
   "system-calibration": 2,
