@@ -1,67 +1,55 @@
 ---
-title: Root Cause Analysis Methods
-date: '2025-05-30'
+title: Systems Thinking in Action: When and How to Use Root Cause Analysis Tools
+date: '2025-06-01'
 tags: ['Root Cause Analysis', 'systems engineering', 'Product Development']
 draft: false
-summary: 'Have you seen teams start on a wrong path to finding a root cause to a problem and spend weeks with no problem statement. Read on if you would like a flowchart to choose the right method to finding a rootcause'
+summary: 'Have you seen teams start on a wrong path to finding a root cause of a problem and spend weeks with no problem statement. Read on if you would like a flowchart to choose the right method to finding a rootcause'
 authors: ['Kausi']
 images:
   [
-    '/static/images/p-diag.png',
-    '/static/images/elementsofP.png',
-    '/static/images/ElementsofDisco.png',
-    '/static/images/pdiagdisco.png',
+    '/static/images/systemsthinking.png',
+    '/static/images/RCA_title.png',
   ]
 ---
 
-![P-Diagram](/static/images/p-diag.png)
+![RCA](/static/images/RCA_title.png)
 
-# The Role of P-Diagrams in Product Development
+# Systems Thinking in Action
 
-P-diagrams (parameter diagrams) are a powerful tool that is often ignored or underutilized by product development teams. They are not a silver bullet for identifying all failure modes of a system. So, I do not intend to conclude this article by stating that P-diagrams will solve all your product design issues. However, they are a powerful tool that enables robust system design and helps systems engineers adopt a structured problem-solving approach. Based on some recent work I have done on a product, I wanted to share my experience with my network regarding how to use this tool and how you can get the most from it. I also hope to influence systems engineering leaders to consider it an essential part of their early development efforts, including requirements elicitation and system design processes.
+If you are a Systems Engineer who is involved in definition, design, implementation, integration, or validation, you have most likely encountered the term "systems thinking" many times. But what does it truly mean?
+Over the past several decades, many authors and systems practitioners have defined and redefined systems thinking. However, one of the most fundamental definitions comes from Barry Richmond. He describes systems thinking as a continuum of activities ranging from conceptual to technical—spanning from a systems-level perspective to implementation-level thinking [^1].
+Ross and Jon [^2] analyzed numerous definitions of systems thinking in their research. In essence, and without overcomplicating it, systems thinking is the consideration of how elements, their interrelationships, functions, and dynamic behavior together form a whole. Each system serves a goal or objective through the interaction of its components. The more complex these interactions are, the more difficult it becomes to identify the root cause of a system issue.
+![Systems Thinking](/static/images/systemsthinking.png)
+## The Engineer’s Toolkit: Making Sense of Root Cause Analysis Methods
 
-## Elements of a P-Diagram
+To address the challenges that arise from system interactions, systems engineers use a variety of methods to identify root causes. Root Cause Analysis (RCA) is a structured approach followed to identify the underlying causes of problems rather than merely addressing the symptoms. There are several RCA methods, each suited to different types of problems depending on factors like the complexity of the system functions, data availability, and system maturity.
+Here is a summary of commonly used RCA methods and guidance on when to use each. If you’d like to get to the summary and a flowchart – feel free to scroll to the end.
 
-P-diagrams assist system engineers in developing a holistic representation of a system's emergent behavior by mapping the inputs, parameters, and outputs of a system. Consequently, it naturally becomes an excellent tool for analyzing the emergent behavior of complex systems—behavior that arises from interactions among components and is often unpredictable based on the properties of individual components of a system [^1]. The tool also aids in other frameworks like Design for Six Sigma, which emphasizes minimizing variations through a robust design process [^2]. We can utilize the information generated from the P-diagrams, such as error states and noise factors, to generate failure modes and potential causes for developing the DFSS framework.
-
-A P-diagram includes five components in addition to the system or process being considered: inputs to the system, control factors, noise factors, desired outputs, and error states or degraded system modes.
-
-- Inputs: Inputs are typically user commands, sensor inputs, or feedback signals that impact system behavior. They can also include internal signals if they influence system performance and desired behavior.
-- Noise Factors: Noise factors are generally sources of variation outside the designer's control that often trigger or exacerbate failure modes [3]. Examples include environmental conditions (temperature, humidity), wear and tear, user variability, and manufacturing tolerances.
-- Control Factors: Control factors are design elements and strategies considered by designers to develop a robust system. Examples include system calibrations, component material types, initialization strategies, and control parameters used to achieve optimum system performance despite noise factors.
-- Outputs: Outputs represent the expected system behaviors, such as functional performance, response times, or metrics that gauge customer experience. They are typically defined by stakeholder requirements.
-- Error States: Error states refer to unintended system behaviors, including failure modes, safety risks, or poor user experiences. It is crucial to consider specific failure symptoms and their potential causes when identifying error states instead of merely negating the expected outputs.
-
-![Elements of P](/static/images/elementsofP.png)
-
-While it is the systems design engineer’s responsibility to develop this in a product development setting, requirement engineers, component design engineers, and V&V engineers must understand these influencing factors to assist in failure mode analysis and root cause identification analysis.
-
-## Application of P-Diagrams in Product Development
-
-The true benefit of a P-diagram lies in its ability to guide the failure mode analysis (FMEA) and root cause investigations. When a system exhibits unexpected behavior, engineers can start from the control and noise factors to analyze plausible failure paths. This systemic approach often identifies issues that traditional failure analyses, like fishbone, may overlook, especially in complex mechatronic systems [^3].
-
-### Example: Disconnect System in Drivetrain
-
-To demonstrate the application of a P-diagram, I will consider a driveline disconnect system that enables switching between disconnected, forward propulsion, and regen modes. This driveline subsystem is a great candidate for analyzing the emergent behavior under certain driving conditions because it is a simple system, yet interactions due to the composition of the mechanical components, actuators, sensors, and control logic with other driveline subsystems and vehicle control units. If you are interested in learning about the disconnect system technology, please refer to the article in the references section [^4].
-
-### P-Diagram Elements
-
-When transitioning between modes, a vehicle control system relies on input from an automatic state selection algorithm based on the vehicle controls. So, the inputs and control parameters vary based on the mode selection approach. However, to simplify the p-diagram approach, we will ignore the failure modes from the vehicle controls that might impact the mode-switching patterns.
-
-![Elements of disco](/static/images/ElementsofDisco.png)
-
-Each error state may stem from different causes and could impact the system’s performance and safety. By mapping this system into a P-diagram, development teams can develop failure modes and potential emergent behavior from system interactions. These insights can guide teams in effective design verification & validation, and robustness testing.
+### 5 Whys
+- Ask "Why?" repeatedly (typically five times) to drill down to the root cause of a problem. This method is best for simple to moderately complex problems where the cause-effect relationship is linear. For example, a test equipment stopped working—used in manufacturing, operations, or service issues.
+- While it is easy to use, one can oversimplify the approach so may not be ideal for complex or multi-factor problems.
+### Fishbone Diagram (Ishikawa or Cause-and-Effect Diagram)
+- A visual tool that categorizes potential causes into groups such as Machines, People, Materials, Measurements, and Environment. It is best for brainstorming and categorizing potential causes of a problem. For example, why did a product fail in a production environment. 
+- It is one of the best tools for visualizing and organizing thoughts and helps in team collaboration. However, one may not be able to get to the root cause by Fishbone analysis alone – a deeper analysis may be needed to get to the root cause.
+### Fault Tree Analysis (FTA)
+- A top-down, deductive failure analysis that uses logic to determine the cause of a potential failure. This is best for complex system where failures can result from combinations of events. An application example is investigating a system-level failure in automotive electronics or aerospace.
+- It is a very detailed and structured approach and highly effective for safety-critical systems. However, due to the detailed analysis required, it is not only time-consuming but requires technical expertise and detailed system knowledge.
+### Failure Mode and Effects Analysis
+- FMEA systematically evaluates possible failure modes within a system and their potential effects. It is best when applied during the product or process design and development stages. For example, assessing risks in a new inverter design before component and system validation.
+- It helps prioritizing issues by risk, enabling teams to develop mitigation methods and control mechanisms. However, there is very little value one can add by following this approach post-production.
+### Pareto Analysis
+- It uses the 80/20 rule to identify the most common causes contributing to most problems. It is best when used to prioritize problems or causes (once identified using another RCA approach) based on the frequency of occurrence or impact. For example, reducing defect rates during production by focusing on the top contributors.
+- It is data-driven and easy to implement but doesn’t identify root cause directly.
+### Kepner-Tregoe Analysis
+- A structured, logical decision-making method that includes problem analysis, decision analysis, and potential problem analysis. It is best for complex problems requiring systematic decision-making and evaluation of alternatives. An example use is evaluating why a multi-functional software system failed in a customer vehicle and determining corrective action.
+- It is a very comprehensive and methodical approach but can be time-consuming and resource intensive.
+### 8D (Eight Disciplines) Problem Solving and 3x5 Why Analysis 
+- A team-oriented, structured approach typically used in manufacturing and quality to solve complex problems. It is best for chronic, recurring issues or customer complaints in regulated industries (automotive, aerospace). An application example is to identify root cause for repeated failures during system validation.
+- These two methods include root cause analysis, corrective action, and prevention. However, these approaches require cross-functional teams to participate during analysis.
 
 <PlotlySankey />
 
-By mapping this system into a P-diagram, development teams can develop failure modes and potential emergent behavior from system interactions. These insights can guide an effective design validation, verification planning, and robustness testing.
-
-![P Error](/static/images/sourcesoferror.png)
-
 ## Conclusion
-
-P-diagrams are a practical tool that enables a robust design process and effective failure mode identification and root cause analysis. The benefits are higher when this tool is used early in the product development process, particularly during requirements definition and functional decomposition. This tool will not replace the detailed design tools your organization uses or the design effort by the development teams. However, their value lies in enabling the engineering teams to visualize and proactively address the variability inherent in complex systems.
-[^1]: Haskins, C. INCOSE Systems Engineering Handbook. Wiley, 2006.
-[^2]: Quality-One. Introduction to Design for Six Sigma (DFSS). https://quality-one.com/dfss/.
-[^3]: Heinold, L., Barkanyi, A., Abonyi, J. (2021, May). Test Plan for the Verification of the Robustness of Sensors and Automotive Electronic Products Using Scenario-Based Noise Deployment (SND). DOI:10.3390/s21103359
-[^4]: Jennings, J. (2024, February). Unlocking the Key to Seamless EV Driveline Disconnects. https://cti-symposium.world/unlocking-the-key-to-seamless-ev-driveline-disconnects-2/
+Each RCA method has its strengths and limitations. The key to effective root cause analysis lies in selecting the right method based on the nature of the problem and the development phase of the system. Understanding these tools and applying them appropriately ensures more effective diagnosis, better system performance, and improved cross-functional collaboration.
+[^1]: Richmond, B. Systems Thinking: Four Key Questions. https://www.iseesystems.com/resources/articles/
+[^2]: Ross D. A, Jon P. W, (2015), A Definition of Systems Thinking: A Systems Approach, Procedia Computer Science, Volume 44, https://doi.org/10.1016/j.procs.2015.03.050.

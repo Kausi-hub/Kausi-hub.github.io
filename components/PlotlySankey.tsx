@@ -15,7 +15,7 @@ const PlotlySankey: React.FC = () => {
       label: [
         'Start',
         'Simple problem?',
-        'Use 5 Whys',
+        '5 Why',
         'Multiple causes?',
         'Fishbone Diagram',
         'Complex system?',
@@ -23,7 +23,7 @@ const PlotlySankey: React.FC = () => {
         'Design phase?',
         'FMEA',
         'Recurring issue?',
-        '8D Problem Solving',
+        '8D or 3x5',
         'Prioritize causes?',
         'Pareto Analysis',
         'Decision-making needed?',
