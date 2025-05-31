@@ -76,7 +76,7 @@ const PlotlySankey: React.FC = () => {
       data={[sankeyTrace]}
       layout={{
         title: 'Root Cause Analysis Flow',
-        font: { size: 12 },
+        font: { size: 12, color: 'black' },
         height: 600, // allows responsive layout
       }}
       style={{ width: '100%' }}
