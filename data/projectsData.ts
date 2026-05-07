@@ -16,10 +16,10 @@ const projectsData: Project[] = [
     href: 'https://kausi-hub.github.io/blog/systems engineering/LLM/requirements_analyzer',
   },
   {
-    title: 'Remote 3-D Printing',
-    description: `A project to make 3D printing affordable for hobbyists. Manage your 3D printing jobs remotely with as little as a $250 investment in accessories and a tiny bit of interest in electronics and programming`,
+    title: 'A test data anomaly detector',
+    description: `If you are a manufacturing engineer or a test engineer who spends numerous hours sifting through data to find anomalies, this is for you. The app enables uploading CAN logs in text format for passed and failed runs and generates a divergence matrix identifying the signals that are potential root cause from a failed data set`,
     imgSrc: '/static/images/3dprinting.png',
-    href: '',
+    href: 'https://testdata-anomalydetector.streamlit.app/',
   },
   {
     title: 'A Family Calendar',
