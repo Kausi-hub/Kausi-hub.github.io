@@ -17,9 +17,9 @@ const projectsData: Project[] = [
   },
   {
     title: 'A test data anomaly detector',
-    description: `If you are a manufacturing engineer or a test engineer who spends numerous hours sifting through data to find anomalies, this is for you. The app enables uploading CAN logs in text format for passed and failed runs and generates a divergence matrix identifying the signals that are potential root cause from a failed data set`,
+    description: `If you are a manufacturing engineer or a test engineer who is reviewing logs generated historically and spending numerous hours sifting through data to map rig data to gateway data, this is for you. The app enables uploading CAN logs from the gateway in text format and csv files from the rig for EOL runs and generates a mapping matrix from csv to CAN logs based on time stamps of runs`,
     imgSrc: '/static/images/3dprinting.png',
-    href: 'https://testdata-anomalydetector.streamlit.app/',
+    href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
   },
   {
     title: 'A Family Calendar',
