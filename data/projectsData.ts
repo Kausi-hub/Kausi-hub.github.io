@@ -15,7 +15,7 @@ const projectsData: Project[] = [
   {
     title: 'A test data anomaly detector',
     description: `The EOL Matching Dashboard is a Python-based tool that compares and aligns CSV and TXT or ASCII test data. It matches runs using time differences and signal similarity, producing a confidence score with a red-yellow-green indicator. The app includes an interactive timeline, results table, and downloadable Excel reports. Users can filter and visualize signal comparisons through dynamic plots. It also tracks previous analyses. Overall, it simplifies debugging, validation, and data comparison, making engineering workflows more efficient and insightful.`,
-    imgSrc: '/static/images/3dprinting.png',
+    imgSrc: '/static/images/EOLdashboard.png',
     href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
   },
   {
