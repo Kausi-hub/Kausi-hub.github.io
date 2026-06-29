@@ -8,16 +8,13 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: 'LLM based Requirement Reviewer',
-    description: `In my experience in product development, most functions and disciplines are measured against some metrics.
-    For example, software developers: number of bugs/issues; validation: number of unidentified issues; integration & calibration: system performance maturity achieved, etc.
-    However, some key disciplines like requirements development and architecture development, which are the foundation for the product, typically don't have objective metrics.
-    So, I decided to develop a tool that enables teams to feed in text-based requirements and generate a satisfaction score based on the completeness, correctness, and clarity?`,
+    description: `In product development, most disciplines are evaluated using clear metrics—for example, software developers by bug counts, validation teams by missed issues, and integration teams by achieved performance maturity. However, foundational areas like requirements and architecture development often lack objective measures despite their critical impact. To address this gap, I developed a tool that analyzes text-based requirements and generates a satisfaction score. The score evaluates key aspects such as completeness, correctness, and clarity, helping teams objectively assess quality and improve the foundation of their products.`,
     imgSrc: '/static/images/req_analyzer.png',
     href: 'https://kausi-hub.github.io/blog/systems engineering/LLM/requirements_analyzer',
   },
   {
     title: 'A test data anomaly detector',
-    description: `If you are a manufacturing engineer or a test engineer who is reviewing logs generated historically and spending numerous hours sifting through data to map rig data to gateway data, this is for you. The app enables uploading CAN logs from the gateway in text format and csv files from the rig for EOL runs and generates a mapping matrix from csv to CAN logs based on time stamps of runs`,
+    description: `The EOL Matching Dashboard is a Python-based tool that compares and aligns CSV and TXT or ASCII test data. It matches runs using time differences and signal similarity, producing a confidence score with a red-yellow-green indicator. The app includes an interactive timeline, results table, and downloadable Excel reports. Users can filter and visualize signal comparisons through dynamic plots. It also tracks previous analyses. Overall, it simplifies debugging, validation, and data comparison, making engineering workflows more efficient and insightful.`,
     imgSrc: '/static/images/3dprinting.png',
     href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
   },
