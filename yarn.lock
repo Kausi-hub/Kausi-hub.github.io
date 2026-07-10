@@ -12547,6 +12547,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^5.7.0":
+  version: 5.7.0
+  resolution: "react-icons@npm:5.7.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10/db064cfe8e6456ba315d960debc50d3535ec794376c059bcdd79e20985d3c77d58a24c8cc567608695b10accd62b6c3c422821569b9c3c94d0811fe952c31e8c
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -14540,6 +14549,7 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:^0.6.11"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
+    react-icons: "npm:^5.7.0"
     react-plotly.js: "npm:^2.6.0"
     reading-time: "npm:1.5.0"
     rehype-autolink-headings: "npm:^7.1.0"

@@ -10,6 +10,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import ExcelClient from '@/components/excel-example'
+import ShareButton from '@/components/ShareButton'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -125,6 +126,13 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                     </div>
                   </div>
                 )}
+                <div className="border-t border-gray-200 pt-6 dark:border-gray-700">
+                  <h2 className="text-xs font-semibold tracking-wide uppercase">Share</h2>
+
+                  <div className="mt-2">
+                    <ShareButton title={title} />
+                  </div>
+                </div>
                 {(next || prev) && (
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && prev.path && (

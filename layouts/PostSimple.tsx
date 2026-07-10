@@ -8,6 +8,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import ShareButton from '@/components/ShareButton'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -36,6 +37,7 @@ export default function PostLayout({ content, next, prev, children }: LayoutProp
               </dl>
               <div>
                 <PageTitle>{title}</PageTitle>
+                <ShareButton title={title} />
               </div>
             </div>
           </header>
