@@ -127,7 +127,9 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                   </div>
                 )}
                 <div className="divide-gray-200 text-sm leading-5 font-medium xl:col-start-1 xl:row-start-2 xl:divide-y dark:divide-gray-700">
-                  <h2 className="text-xs font-semibold tracking-wide uppercase dark:text-gray-400">Share</h2>
+                  <h2 className="text-xs font-semibold tracking-wide uppercase dark:text-gray-400">
+                    Share
+                  </h2>
 
                   <div className="mt-2">
                     <ShareButton title={title} />
