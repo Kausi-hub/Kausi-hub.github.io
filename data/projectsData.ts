@@ -19,6 +19,12 @@ const projectsData: Project[] = [
     href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
   },
   {
+    title: 'A predictive model for degradation of semiconductor devices in an inverter',
+    description: `A model to predict degradation of semiconductor devices in an inverter due to repeated thermal cycling`,
+    imgSrc: '/static/images/predictwear.png',
+    href: 'https://eeweardetectml-ks.streamlit.app/',
+  },
+  {
     title: 'A Family Calendar',
     description: `What if you could sync up the calendars of your family and generate
     conflicts and reminders every week?`,
