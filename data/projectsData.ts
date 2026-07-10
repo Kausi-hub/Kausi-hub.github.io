@@ -12,17 +12,17 @@ const projectsData: Project[] = [
     imgSrc: '/static/images/req_analyzer.png',
     href: 'https://requirementsanalyzerml-ks.streamlit.app/',
   },
+    {
+    title: 'A predictive model for degradation of semiconductor devices in an inverter',
+    description: `A model to predict degradation of semiconductor devices in an inverter due to repeated thermal cycling`,
+    imgSrc: '/static/images/predictwear.png',
+    href: 'https://eeweardetectml-ks.streamlit.app/',
+  },
   {
     title: 'A test data anomaly detector',
     description: `The EOL Matching Dashboard is a Python-based tool that compares and aligns CSV and TXT or ASCII test data. It matches runs using time differences and signal similarity, producing a confidence score with a red-yellow-green indicator. The app includes an interactive timeline, results table, and downloadable Excel reports. Users can filter and visualize signal comparisons through dynamic plots. It also tracks previous analyses. Overall, it simplifies debugging, validation, and data comparison, making engineering workflows more efficient and insightful.`,
     imgSrc: '/static/images/EOLdashboard.png',
     href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
-  },
-  {
-    title: 'A predictive model for degradation of semiconductor devices in an inverter',
-    description: `A model to predict degradation of semiconductor devices in an inverter due to repeated thermal cycling`,
-    imgSrc: '/static/images/predictwear.png',
-    href: 'https://eeweardetectml-ks.streamlit.app/',
   },
   {
     title: 'A Family Calendar',
