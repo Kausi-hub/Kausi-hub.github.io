@@ -10,7 +10,7 @@ const projectsData: Project[] = [
     title: 'LLM based Requirement Reviewer',
     description: `In product development, most disciplines are evaluated using clear metrics—for example, software developers by bug counts, validation teams by missed issues, and integration teams by achieved performance maturity. However, foundational areas like requirements and architecture development often lack objective measures despite their critical impact. To address this gap, I developed a tool that analyzes text-based requirements and generates a satisfaction score. The score evaluates key aspects such as completeness, correctness, and clarity, helping teams objectively assess quality and improve the foundation of their products.`,
     imgSrc: '/static/images/req_analyzer.png',
-    href: 'https://kausi-hub.github.io/blog/systems engineering/LLM/requirements_analyzer',
+    href: 'https://github.com/Kausi-hub/RequirementsAnalyzer_ML',
   },
   {
     title: 'A test data anomaly detector',
