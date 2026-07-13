@@ -1,32 +1,58 @@
+import Link from 'next/link'
 import projectsData from '@/data/projectsData'
-import Card from '@/components/Card'
-import { genPageMetadata } from 'app/seo'
 
-export const metadata = genPageMetadata({ title: 'Projects' })
+const categories = [
+  'AI & Systems Engineering',
+  'Controls & Automation',
+  'Predictive Analytics',
+  'Data Engineering',
+  'Productivity Tools',
+]
 
-export default function Projects() {
+export default function ProjectsPage() {
+  const featuredProjects = projectsData.filter(
+    (project) => project.featured
+  )
+
   return (
-    <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-xl leading-6 font-extrabold tracking-tight text-gray-900 sm:text-xl sm:leading-9 md:text-xl md:leading-8 dark:text-gray-100">
-            Projects
-          </h1>
-        </div>
-        <div className="container py-12">
-          <div className="-m-4 flex flex-wrap">
-            {projectsData.map((d) => (
-              <Card
-                key={d.title}
-                title={d.title}
-                description={d.description}
-                imgSrc={d.imgSrc}
-                href={d.href}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="mx-auto flex max-w-7xl gap-10 px-4 py-8">
+      <aside className="sticky top-24 hidden h-fit w-64 lg:block">
+        <h2 className="mb-4 text-xl font-bold">Projects</h2>
+
+        <nav>
+          <ul className="space-y-2">
+            <li>
+              <a
+                href="#featured"
+                className="block rounded px-2 py-1 text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:hover:bg-gray-800"
+              >
+                Featured Projects
+              </a>
+            </li>
+
+            {categories.map((category) => {
+              const sectionId = category
+                .toLowerCase()
+                .replace(/\s+/g, '-')
+
+              return (
+                <li key={category}>
+                  <a
+                    href={`#${sectionId}`}
+                    className="block rounded px-2 py-1 text-gray-600 hover:bg-gray-100 hover:text-blue-600 dark:hover:bg-gray-800"
+                  >
+                    {category}
+                  </a>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
+      </aside>
+
+      <main className="flex-1">
+        <h1 className="mb-10 text-5xl font-bold">Projects</h1>
+      </main>
+    </div>
   )
 }
