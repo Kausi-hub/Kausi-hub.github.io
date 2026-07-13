@@ -22,9 +22,7 @@ const categories = [
 ]
 
 export default function ProjectsPage() {
-  const featuredProjects = (projectsData as Project[]).filter(
-    (project) => project.featured
-  )
+  const featuredProjects = (projectsData as Project[]).filter((project) => project.featured)
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10">
@@ -35,7 +33,10 @@ export default function ProjectsPage() {
             <nav>
               <ul className="space-y-2">
                 <li>
-                  <a href="#featured" className="block rounded px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                  <a
+                    href="#featured"
+                    className="block rounded px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
                     ⭐ Featured Projects
                   </a>
                 </li>
@@ -59,12 +60,10 @@ export default function ProjectsPage() {
 
         <main className="min-w-0 flex-1">
           <header className="mb-14">
-            <h1 className="mb-4 text-5xl font-bold tracking-tight">
-              Engineering Projects
-            </h1>
+            <h1 className="mb-4 text-5xl font-bold tracking-tight">Engineering Projects</h1>
             <p className="max-w-4xl text-lg text-gray-600 dark:text-gray-300">
-              A collection of systems engineering, controls, machine learning,
-              reliability, data analytics and automation projects.
+              A collection of systems engineering, controls, machine learning, reliability, data
+              analytics and automation projects.
             </p>
           </header>
 
@@ -116,11 +115,7 @@ function ProjectCard({ project }: CardProps) {
   return (
     <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg dark:border-gray-700 dark:bg-gray-900">
       {project.imgSrc && (
-        <img
-          src={project.imgSrc}
-          alt={project.title}
-          className="h-64 w-full object-cover"
-        />
+        <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
       )}
 
       <div className="p-6">
@@ -142,7 +137,7 @@ function ProjectCard({ project }: CardProps) {
           </span>
         </div>
 
-        <p className="mb-6 whitespace-pre-line leading-7 text-gray-600 dark:text-gray-300">
+        <p className="mb-6 leading-7 whitespace-pre-line text-gray-600 dark:text-gray-300">
           {project.description}
         </p>
 
