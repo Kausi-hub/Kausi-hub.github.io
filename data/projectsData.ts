@@ -129,7 +129,7 @@ Allows rapid evaluation of control strategies and system stability while reducin
 
     category: 'Controls & Automation',
 
-    featured: true,
+    featured: false,
 
     status: 'Active',
 
