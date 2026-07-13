@@ -123,7 +123,43 @@ Allows rapid evaluation of control strategies and system stability while reducin
     repo:
       'https://github.com/Kausi-hub/Motor_Ctrl'
   },
+  {
+    title:
+      'Motor Control Workbench',
 
+    category: 'Controls & Automation',
+
+    featured: true,
+
+    status: 'Active',
+
+    description: `
+Problem:
+Evaluating motor control algorithms often requires multiple disconnected tools and extensive manual analysis.
+
+Solution:
+Built a simple workbench supporting PID tuning for speed and position control.
+
+Impact:
+Allows rapid evaluation of control tuning and system stability.
+    `,
+
+    tags: [
+      'Control Systems',
+      'PID',
+      'Python',
+      'Streamlit'
+    ],
+
+    imgSrc:
+      '/static/images/motorcontrols.png',
+
+    href:
+      'https://motorctrl-workbench.streamlit.app/',
+
+    repo:
+      'https://github.com/Kausi-hub/simple_motor_control'
+  },
   {
     title:
       'Test Data Anomaly Detector',
