@@ -10,9 +10,7 @@ const categories = [
 ]
 
 export default function ProjectsPage() {
-  const featuredProjects = projectsData.filter(
-    (project) => project.featured
-  )
+  const featuredProjects = projectsData.filter((project) => project.featured)
 
   return (
     <div className="mx-auto flex max-w-7xl gap-10 px-4 py-8">
@@ -31,9 +29,7 @@ export default function ProjectsPage() {
             </li>
 
             {categories.map((category) => {
-              const sectionId = category
-                .toLowerCase()
-                .replace(/\s+/g, '-')
+              const sectionId = category.toLowerCase().replace(/\s+/g, '-')
 
               return (
                 <li key={category}>
