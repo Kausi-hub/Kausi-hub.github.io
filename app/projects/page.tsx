@@ -143,23 +143,9 @@ function FeaturedProjectCard({ project }: CardProps) {
 
   return (
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-      {/*       {project.imgSrc && (
-        <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
-      )} */}
-
       <div className="p-6">
         <div className="mb-3 flex flex-wrap items-center gap-3">
           <h3 className="text-2xl font-bold">{project.title}</h3>
-          {project.status && (
-            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-              {project.status}
-            </span>
-          )}
-        </div>
-
-        <p className="mb-6 text-gray-600 dark:text-gray-300">{project.highlight}</p>
-
-        <div className="flex flex-wrap gap-3">
           {project.href && (
             <Link
               href={project.href}
@@ -169,7 +155,16 @@ function FeaturedProjectCard({ project }: CardProps) {
               Live Demo →
             </Link>
           )}
+        </div>
 
+        <p className="mb-6 text-gray-600 dark:text-gray-300">{project.highlight}</p>
+
+        <div className="flex flex-wrap gap-3">
+          {project.status && (
+            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+              {project.status}
+            </span>
+          )}
           <a
             href={`#${projectId}`}
             className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
