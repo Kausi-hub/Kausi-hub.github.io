@@ -103,7 +103,7 @@ Impact:
   ],
 
   imgSrc: '/static/images/motorcontrols.png',
-  href: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller',
+  href: 'https://evbatterythermalmanagementcontroller-dash.streamlit.app/',
   repo: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller.git'
 },
 
