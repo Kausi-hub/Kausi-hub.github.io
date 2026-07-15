@@ -143,7 +143,7 @@ function FeaturedProjectCard({ project }: CardProps) {
 
   return (
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-{/*       {project.imgSrc && (
+      {/*       {project.imgSrc && (
         <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
       )} */}
 
@@ -157,9 +157,7 @@ function FeaturedProjectCard({ project }: CardProps) {
           )}
         </div>
 
-        <p className="mb-6 text-gray-600 dark:text-gray-300">
-          {project.highlight}
-        </p>
+        <p className="mb-6 text-gray-600 dark:text-gray-300">{project.highlight}</p>
 
         <div className="flex flex-wrap gap-3">
           {project.href && (
