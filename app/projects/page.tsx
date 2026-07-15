@@ -3,6 +3,7 @@ import projectsData from '@/data/projectsData'
 
 interface Project {
   title: string
+  highlight: string
   description: string
   href?: string
   repo?: string
@@ -10,7 +11,7 @@ interface Project {
   category: string
   tags: string[]
   featured?: boolean
-  status?: 'Active' | 'Research' | 'In Development'
+  status?: 'Active' | 'In Development' | 'Research'
 }
 
 const categories = [
@@ -140,16 +141,11 @@ type CardProps = {
 function FeaturedProjectCard({ project }: CardProps) {
   const projectId = project.title.toLowerCase().replace(/\s+/g, '-')
 
-  const teaser =
-    project.description.length > 140
-      ? `${project.description.slice(0, 140)}...`
-      : project.description
-
   return (
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
-      {project.imgSrc && (
+{/*       {project.imgSrc && (
         <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
-      )}
+      )} */}
 
       <div className="p-6">
         <div className="mb-3 flex flex-wrap items-center gap-3">
@@ -161,7 +157,9 @@ function FeaturedProjectCard({ project }: CardProps) {
           )}
         </div>
 
-        <p className="mb-6 text-gray-600 dark:text-gray-300">{teaser}</p>
+        <p className="mb-6 text-gray-600 dark:text-gray-300">
+          {project.highlight}
+        </p>
 
         <div className="flex flex-wrap gap-3">
           {project.href && (
