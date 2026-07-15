@@ -110,7 +110,7 @@ Impact:
 {
   title: 'Semiconductor Wear Prediction in Inverters',
   category: 'Predictive Analytics',
-  featured: true,
+  featured: false,
   status: 'Research',
 
   highlight:
@@ -200,7 +200,7 @@ Impact:
 {
   title: 'Motor Control Workbench',
   category: 'Controls & Automation',
-  featured: true,
+  featured: false,
   status: 'Active',
 
   highlight:
@@ -235,6 +235,7 @@ Impact: Faster controls development and Improved design iteration speed
 {
   title: 'Test Data Anomaly Detector',
   category: 'Data Engineering',
+  featured: false,
   status: 'Active',
 
   highlight:
