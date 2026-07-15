@@ -1,10 +1,10 @@
 interface Project {
   title: string
+  highlight: string
   description: string
   href?: string
   repo?: string
   imgSrc?: string
-
   category: string
   tags: string[]
   featured?: boolean
@@ -12,225 +12,308 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-  {
-    title: 'Requirements Analyzer',
-    category: 'AI & Systems Engineering',
-    featured: true,
-    status: 'Active',
+{
+  title: 'Requirements Analyzer',
+  category: 'AI & Systems Engineering',
+  featured: true,
+  status: 'Active',
 
-    description: `
+  highlight:
+    'AI-powered requirements quality assessment platform that automatically identifies ambiguity, incompleteness, and compliance gaps while generating objective requirement quality scores.',
+
+  description: `
+Overview:
+Engineering requirements are frequently reviewed through manual inspection and subjective interpretation. This often leads to inconsistencies in requirement quality and late discovery of specification issues.
+
 Problem:
-Engineering requirements are often reviewed subjectively, making it difficult to assess quality consistently across teams.
+Organizations struggle to objectively assess requirement maturity, identify ambiguous language, detect conflicts between requirements, and evaluate completeness before implementation begins.
 
 Solution:
-Developed a requirements analysis platform that evaluates requirement quality using rule-based reasoning and generates a requirements satisfaction score. The tool analyzes completeness, ambiguity, consistency, conflicts, performance constraints, and timing requirements.
+Developed an intelligent requirements analysis platform using rule-based reasoning and automated evaluation techniques. The system examines:
+• Requirement completeness
+• Ambiguous terminology
+• Consistency and conflicts
+• Timing constraints
+• Performance requirements
+• Verification readiness
+
+The platform generates a quantitative Requirements Satisfaction Score and detailed feedback reports for engineering teams.
 
 Impact:
-Provides objective feedback on requirement quality and helps engineering teams identify issues earlier in the development lifecycle.
-    `,
+• Standardized requirements reviews
+• Reduced manual review effort
+• Earlier detection of specification issues
+• Improved systems engineering quality
+• Better traceability and requirements governance
+  `,
 
-    tags: [
-      'Systems Engineering',
-      'Requirements',
-      'Python',
-      'Streamlit',
-      'Automation'
-    ],
+  tags: [
+    'Systems Engineering',
+    'Requirements Engineering',
+    'Python',
+    'Streamlit',
+    'Automation',
+    'AI'
+  ],
 
-    imgSrc: '/static/images/req_analyzer.png',
+  imgSrc: '/static/images/req_analyzer.png',
+  href: 'https://requirementsanalyzerml-ks.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/requirements-analyzer'
+},
 
-    href:
-      'https://requirementsanalyzerml-ks.streamlit.app/',
+{
+  title: 'EV Thermal Management Workbench',
+  category: 'Controls & Automation',
+  featured: true,
+  status: 'Research',
 
-    repo:
-      'https://github.com/Kausi-hub/requirements-analyzer'
-  },
+  highlight:
+    'Research platform for developing and validating battery thermal management strategies using virtual cooling system simulations and fault diagnostics.',
 
-  {
-    title:
-      'Semiconductor Wear Prediction in Inverters',
+  description: `
+Overview:
+Battery temperature management directly impacts EV performance, safety, charging speed, and battery life.
 
-    category: 'Predictive Analytics',
-
-    featured: true,
-
-    status: 'Research',
-
-    description: `
 Problem:
-Power semiconductor degradation due to thermal cycling is one of the leading causes of inverter reliability issues.
+Developing thermal management software often requires expensive validation resources and long development cycles.
 
 Solution:
-Developed a predictive machine-learning model that estimates semiconductor wear based on thermal stress and operating conditions.
+Created a simulation environment containing:
+• Battery thermal models
+• Coolant flow dynamics
+• Pump control strategies
+• Thermal fault detection
+• Controller evaluation capabilities
+
+The platform enables rapid experimentation and algorithm development before hardware integration.
 
 Impact:
-Enables predictive maintenance decisions and reliability assessment before component failure occurs.
-    `,
+• Accelerates controls development
+• Reduces prototyping costs
+• Enables earlier validation
+• Supports model-based design workflows
+  `,
 
-    tags: [
-      'Machine Learning',
-      'Reliability',
-      'Power Electronics',
-      'Predictive Analytics',
-      'Python'
-    ],
+  tags: [
+    'EV',
+    'Thermal Management',
+    'Simulation',
+    'Control Systems',
+    'C++'
+  ],
 
-    imgSrc:
-      '/static/images/predictwear.png',
+  imgSrc: '/static/images/motorcontrols.png',
+  href: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller',
+  repo: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller.git'
+},
 
-    href:
-      'https://eeweardetectml-ks.streamlit.app/',
+{
+  title: 'Semiconductor Wear Prediction in Inverters',
+  category: 'Predictive Analytics',
+  featured: true,
+  status: 'Research',
 
-    repo:
-      'https://github.com/Kausi-hub/semiconductor-wear-prediction'
-  },
+  highlight:
+    'Machine learning model that predicts power semiconductor degradation from thermal stress data to enable reliability forecasting and predictive maintenance.',
 
-  {
-    title:
-      'Motor Control Engineering Workbench',
+  description: `
+Overview:
+Power semiconductor devices experience degradation due to thermal cycling and operational stress.
 
-    category: 'Controls & Automation',
-
-    featured: true,
-
-    status: 'Active',
-
-    description: `
 Problem:
-Evaluating motor control algorithms often requires multiple disconnected tools and extensive manual analysis.
+Traditional maintenance strategies often discover degradation only after substantial performance deterioration has already occurred.
 
 Solution:
-Built a control engineering workbench supporting PID tuning, system simulation, frequency-domain analysis, requirements validation, and automated report generation.
+Developed a predictive analytics platform that:
+• Processes thermal cycling profiles
+• Evaluates operating conditions
+• Estimates wear accumulation
+• Predicts remaining useful life
+• Supports maintenance planning
 
 Impact:
-Allows rapid evaluation of control strategies and system stability while reducing engineering development time.
-    `,
+• Increased reliability visibility
+• Earlier fault prediction
+• Reduced unexpected failures
+• Improved maintenance planning
+  `,
 
-    tags: [
-      'Control Systems',
-      'PID',
-      'Frequency Domain Analysis',
-      'Python',
-      'Streamlit'
-    ],
+  tags: [
+    'Machine Learning',
+    'Predictive Maintenance',
+    'Reliability Engineering',
+    'Power Electronics',
+    'Python'
+  ],
 
-    imgSrc:
-      '/static/images/motorcontrols.png',
+  imgSrc: '/static/images/predictwear.png',
+  href: 'https://eeweardetectml-ks.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/semiconductor-wear-prediction'
+},
 
-    href:
-      'https://motorctrl-workbench.streamlit.app/',
+{
+  title: 'Motor Control Engineering Workbench',
+  category: 'Controls & Automation',
+  featured: true,
+  status: 'Active',
 
-    repo:
-      'https://github.com/Kausi-hub/Motor_Ctrl'
-  },
-  {
-    title:
-      'Motor Control Workbench',
+  highlight:
+    'End-to-end motor control engineering environment supporting simulation, PID optimization, stability analysis, requirements validation, and automated reporting.',
 
-    category: 'Controls & Automation',
+  description: `
+Overview:
+Motor control development often requires multiple independent software tools, creating inefficiencies during algorithm development and validation.
 
-    featured: false,
-
-    status: 'Active',
-
-    description: `
 Problem:
-Evaluating motor control algorithms often requires multiple disconnected tools and extensive manual analysis.
+Engineers spend significant time moving between simulation environments, analysis tools, and reporting systems.
 
 Solution:
-Built a simple workbench supporting PID tuning for speed and position control.
+Developed an integrated engineering workbench that provides:
+• Motor system modeling
+• PID tuning
+• Stability analysis
+• Frequency-domain analysis
+• Requirements validation
+• Automated documentation
 
 Impact:
-Allows rapid evaluation of control tuning and system stability.
-    `,
+• Faster controls development
+• Improved design iteration speed
+• Reduced analysis effort
+• Better engineering productivity
+  `,
 
-    tags: [
-      'Control Systems',
-      'PID',
-      'Python',
-      'Streamlit'
-    ],
+  tags: [
+    'Control Systems',
+    'PID',
+    'Bode Analysis',
+    'Simulation',
+    'Python',
+    'Streamlit'
+  ],
 
-    imgSrc:
-      '/static/images/motorcontrols.png',
+  imgSrc: '/static/images/motorcontrols.png',
+  href: 'https://motorctrl-workbench.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/Motor_Ctrl'
+},
 
-    href:
-      'https://motorctrl-workbench.streamlit.app/',
+{
+  title: 'Motor Control Workbench',
+  category: 'Controls & Automation',
+  featured: true,
+  status: 'Active',
 
-    repo:
-      'https://github.com/Kausi-hub/simple_motor_control'
-  },
-  {
-    title:
-      'Test Data Anomaly Detector',
+  highlight:
+    'End-to-end motor control engineering environment supporting simulation, PID optimization, stability analysis, requirements validation, and automated reporting.',
 
-    category: 'Data Engineering',
+  description: `
+Overview:
+Motor control development often requires multiple independent software tools, creating inefficiencies during algorithm development and validation.
 
-    status: 'Active',
-
-    description: `
 Problem:
-Comparing end-of-line (EOL) test results across multiple data sources is often a manual and time-consuming activity.
+Engineers spend significant time moving between simulation environments, analysis tools, and reporting systems.
 
 Solution:
-Created an interactive dashboard that aligns CSV, TXT, and ASCII test results using time correlation and signal similarity scoring.
+Developed an engineering workbench that provides motor system PID tuning
 
-Impact:
-Accelerates debugging, validation, and production issue investigation by automatically identifying anomalies and matching test runs.
-    `,
+Impact: Faster controls development and Improved design iteration speed
+  `,
 
-    tags: [
-      'Data Analytics',
-      'Signal Processing',
-      'Visualization',
-      'Python',
-      'Streamlit'
-    ],
+  tags: [
+    'Control Systems',
+    'PID',
+    'Simulation',
+    'Python',
+    'Streamlit'
+  ],
 
-    imgSrc:
-      '/static/images/EOLdashboard.png',
+  imgSrc: '/static/images/motorcontrols.png',
+  href: 'https://motorctrl-workbench.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/simple_motor_control'
+},
 
-    href:
-      'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
+{
+  title: 'Test Data Anomaly Detector',
+  category: 'Data Engineering',
+  status: 'Active',
 
-    repo:
-      'https://github.com/Kausi-hub/eol-anomaly-detector'
-  },
+  highlight:
+    'Automated test-data correlation platform that detects anomalies across multiple manufacturing and EOL test sources.',
 
-  {
-    title:
-      'Family Calendar Assistant',
+  description: `
+Overview:
+Manufacturing investigations often require engineers to manually compare results from several disconnected test files.
 
-    category: 'Productivity Tools',
-
-    status: 'In Development',
-
-    description: `
 Problem:
-Coordinating schedules across multiple family members can be difficult and often leads to conflicts.
+Correlating EOL datasets across formats is labor-intensive and prone to missed anomalies.
 
 Solution:
-A shared scheduling platform that synchronizes family calendars and automatically identifies conflicts, reminders, and upcoming events.
+Built a data engineering platform that:
+• Imports CSV, TXT, and ASCII formats
+• Aligns signals through timestamp correlation
+• Calculates similarity scores
+• Detects anomalies automatically
+• Visualizes matched data streams
 
 Impact:
-Improves household planning and communication by providing a centralized family scheduling assistant.
-    `,
+• Faster root-cause analysis
+• Improved debugging efficiency
+• Reduced manual comparison effort
+• Accelerated production issue investigation
+  `,
 
-    tags: [
-      'Productivity',
-      'Scheduling',
-      'Calendar Integration',
-      'Automation'
-    ],
+  tags: [
+    'Data Engineering',
+    'Signal Processing',
+    'Analytics',
+    'Python',
+    'Streamlit'
+  ],
 
-    imgSrc:
-      '/static/images/calendarapp.png',
+  imgSrc: '/static/images/EOLdashboard.png',
+  href: 'https://anomalydetector-mga5bbfxtuyjc5m7kzhcw2.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/eol-anomaly-detector'
+},
 
-    href: '',
+{
+  title: 'Family Calendar Assistant',
+  category: 'Productivity Tools',
+  status: 'In Development',
 
-    repo:
-      ''
-  }
+  highlight:
+    'Shared family planning assistant that automatically coordinates schedules, identifies conflicts, and manages reminders.',
+
+  description: `
+Overview:
+Family schedule management is frequently fragmented across multiple personal calendars and communication channels.
+
+Problem:
+Conflicting schedules and missed events create planning challenges for households.
+
+Solution:
+Developing a scheduling platform capable of:
+• Shared calendar synchronization
+• Conflict identification
+• Automated reminders
+• Event planning assistance
+• Household coordination workflows
+
+Impact:
+• Improved family organization
+• Better communication
+• Reduced scheduling conflicts
+• Centralized planning experience
+  `,
+
+  tags: [
+    'Productivity',
+    'Scheduling',
+    'Calendar Integration',
+    'Automation'
+  ],
+
+  imgSrc: '/static/images/calendarapp.png'
+}
 ]
 
 export default projectsData

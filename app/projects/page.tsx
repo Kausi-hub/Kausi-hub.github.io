@@ -40,6 +40,14 @@ export default function ProjectsPage() {
                     ⭐ Featured Projects
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="#all-projects"
+                    className="block rounded px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-800"
+                  >
+                    📚 Full Portfolio
+                  </a>
+                </li>
                 {categories.map((category) => {
                   const sectionId = category.toLowerCase().replace(/\s+/g, '-')
                   return (
@@ -59,7 +67,7 @@ export default function ProjectsPage() {
         </aside>
 
         <main className="min-w-0 flex-1">
-          <header className="mb-14">
+          <header className="mb-16">
             <h1 className="mb-4 text-5xl font-bold tracking-tight">Engineering Projects</h1>
             <p className="max-w-4xl text-lg text-gray-600 dark:text-gray-300">
               A collection of systems engineering, controls, machine learning, reliability, data
@@ -67,13 +75,31 @@ export default function ProjectsPage() {
             </p>
           </header>
 
-          <section id="featured" className="mb-20">
-            <h2 className="mb-8 text-3xl font-bold">Featured Projects</h2>
+          <section id="featured" className="mb-24">
+            <div className="mb-10">
+              <h2 className="mb-3 text-4xl font-bold">Featured Projects</h2>
+              <p className="max-w-3xl text-lg text-gray-600 dark:text-gray-300">
+                Highlights from some of my most impactful engineering, analytics and AI initiatives.
+                Explore the previews below and jump into the detailed case studies further down.
+              </p>
+            </div>
+
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {featuredProjects.map((project) => (
-                <ProjectCard key={project.title} project={project} />
+                <FeaturedProjectCard key={project.title} project={project} />
               ))}
             </div>
+          </section>
+
+          <section
+            id="all-projects"
+            className="mb-20 border-t border-gray-200 pt-16 dark:border-gray-700"
+          >
+            <h2 className="mb-4 text-4xl font-bold">Project Portfolio</h2>
+            <p className="max-w-4xl text-lg text-gray-600 dark:text-gray-300">
+              Detailed project documentation, architecture decisions, implementation strategies,
+              technologies, repositories, and engineering outcomes.
+            </p>
           </section>
 
           {categories.map((category) => {
@@ -85,11 +111,17 @@ export default function ProjectsPage() {
             if (projects.length === 0) return null
 
             return (
-              <section key={category} id={sectionId} className="mb-20">
+              <section key={category} id={sectionId} className="mb-24">
                 <h2 className="mb-8 text-3xl font-bold">{category}</h2>
                 <div className="space-y-8">
                   {projects.map((project) => (
-                    <ProjectCard key={project.title} project={project} />
+                    <div
+                      key={project.title}
+                      id={project.title.toLowerCase().replace(/\s+/g, '-')}
+                      className="scroll-mt-32"
+                    >
+                      <ProjectCard project={project} />
+                    </div>
                   ))}
                 </div>
               </section>
@@ -105,6 +137,55 @@ type CardProps = {
   project: Project
 }
 
+function FeaturedProjectCard({ project }: CardProps) {
+  const projectId = project.title.toLowerCase().replace(/\s+/g, '-')
+
+  const teaser =
+    project.description.length > 140
+      ? `${project.description.slice(0, 140)}...`
+      : project.description
+
+  return (
+    <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
+      {project.imgSrc && (
+        <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
+      )}
+
+      <div className="p-6">
+        <div className="mb-3 flex flex-wrap items-center gap-3">
+          <h3 className="text-2xl font-bold">{project.title}</h3>
+          {project.status && (
+            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+              {project.status}
+            </span>
+          )}
+        </div>
+
+        <p className="mb-6 text-gray-600 dark:text-gray-300">{teaser}</p>
+
+        <div className="flex flex-wrap gap-3">
+          {project.href && (
+            <Link
+              href={project.href}
+              target="_blank"
+              className="rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700"
+            >
+              Live Demo →
+            </Link>
+          )}
+
+          <a
+            href={`#${projectId}`}
+            className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
+          >
+            View Details ↓
+          </a>
+        </div>
+      </div>
+    </article>
+  )
+}
+
 function ProjectCard({ project }: CardProps) {
   const statusStyles: Record<string, string> = {
     Active: 'bg-green-100 text-green-700',
@@ -113,15 +194,14 @@ function ProjectCard({ project }: CardProps) {
   }
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg dark:border-gray-700 dark:bg-gray-900">
+    <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
       {project.imgSrc && (
         <img src={project.imgSrc} alt={project.title} className="h-64 w-full object-cover" />
       )}
 
-      <div className="p-6">
+      <div className="p-8">
         <div className="mb-4 flex flex-wrap items-center gap-3">
-          <h3 className="text-2xl font-bold">{project.title}</h3>
-
+          <h3 className="text-3xl font-bold">{project.title}</h3>
           {project.status && (
             <span
               className={`rounded-full px-3 py-1 text-xs font-semibold ${statusStyles[project.status]}`}
@@ -131,30 +211,34 @@ function ProjectCard({ project }: CardProps) {
           )}
         </div>
 
-        <div className="mb-4">
+        <div className="mb-6">
           <span className="rounded bg-blue-100 px-3 py-1 text-sm font-medium text-blue-700">
             {project.category}
           </span>
         </div>
 
-        <p className="mb-6 leading-7 whitespace-pre-line text-gray-600 dark:text-gray-300">
+        <h4 className="mb-2 text-lg font-semibold">Overview</h4>
+        <p className="leading-7 whitespace-pre-line text-gray-600 dark:text-gray-300">
           {project.description}
         </p>
 
         {project.tags?.length > 0 && (
-          <div className="mb-6 flex flex-wrap gap-2">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="mt-6">
+            <h4 className="mb-3 text-lg font-semibold">Technologies</h4>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         )}
 
-        <div className="flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           {project.href && (
             <Link
               href={project.href}
@@ -171,7 +255,7 @@ function ProjectCard({ project }: CardProps) {
               target="_blank"
               className="rounded-md border border-gray-300 px-4 py-2 hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
             >
-              GitHub
+              GitHub Repository
             </Link>
           )}
         </div>

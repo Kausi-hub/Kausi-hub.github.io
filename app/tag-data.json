@@ -1,21 +1,21 @@
 {
   "product-development": 4,
   "motor-control": 1,
-  "strategy": 2,
-  "product-design": 2,
   "leadership": 2,
   "delegation": 1,
   "systems-engineering": 8,
   "change-management": 1,
   "process": 1,
+  "strategy": 2,
+  "product-design": 2,
   "p-diagrams": 1,
   "root-cause-analysis": 1,
   "incose": 1,
   "csep": 1,
   "certification": 1,
-  "llm": 1,
-  "requirements-engineering": 1,
   "system-calibration": 2,
   "data-analysis": 3,
-  "system-integration": 1
+  "system-integration": 1,
+  "llm": 1,
+  "requirements-engineering": 1
 }
