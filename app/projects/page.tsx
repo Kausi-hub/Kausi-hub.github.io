@@ -68,7 +68,6 @@ export default function ProjectsPage() {
         </aside>
 
         <main className="min-w-0 flex-1">
-
           <section id="featured" className="mb-24">
             <div className="mb-10">
               <h2 className="mb-3 text-4xl font-bold">Featured Projects</h2>
