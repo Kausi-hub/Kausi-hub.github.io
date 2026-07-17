@@ -62,6 +62,37 @@ Impact:
 },
 
 {
+  title: 'Autonomous Driving Validation Framework',
+  category: 'Validation & Autonomous systems',
+  featured: true,
+  status: 'Research',
+
+  highlight:
+    'Research platform for validating and verifying release readiness of aunomous systems.',
+
+  description: `
+Overview:
+An autonomy validation framework that ingests ROS2 bag data, stores experiment results, computes KPIs, performs statistical significance testing.
+
+Impact:
+• ingests ROS2 bag data, stores experiment results
+• applies release-gate safety logic
+• visualizes results through an executive validation dashboard
+  `,
+
+  tags: [
+    'AV',
+    'Validation Framework',
+    'Simulation',
+    'Release Management',
+    'Python, SQL, ROS, Streamlit'
+  ],
+
+  imgSrc: '',
+  href: 'https://autonomousdrivingmetrics-ks.streamlit.app/',
+  repo: 'https://github.com/Kausi-hub/Autonomous_Driving_Metrics.git'
+},
+{
   title: 'EV Thermal Management Workbench',
   category: 'Controls & Automation',
   featured: true,
@@ -106,7 +137,6 @@ Impact:
   href: 'https://evbatterythermalmanagementcontroller-dash.streamlit.app/',
   repo: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller.git'
 },
-
 {
   title: 'Semiconductor Wear Prediction in Inverters',
   category: 'Predictive Analytics',
