@@ -71,9 +71,8 @@ export default function ProjectsPage() {
           <section id="featured" className="mb-24">
             <div className="mb-10">
               <h2 className="mb-3 text-2xl font-bold">Featured Projects</h2>
-              <p className="max-w-3xl text-lg text-gray-600 dark:text-gray-300">
-                Highlights from some of my most impactful engineering, analytics and AI initiatives.
-                Explore the previews below and jump into the detailed case studies further down.
+              <p className="max-w-xl text-lg text-gray-600 dark:text-gray-300">
+                Highlights of my most impactful engineering projects. Explore the previews and jump into the detailed further down.
               </p>
             </div>
 
@@ -137,7 +136,7 @@ function FeaturedProjectCard({ project }: CardProps) {
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
       <div className="p-6">
         <div className="mb-3 flex flex-wrap items-center gap-3">
-          <h3 className="text-xl font-bold">{project.title}</h3>
+          <h3 className="text-xl">{project.title}</h3>
           {project.href && (
             <Link
               href={project.href}
