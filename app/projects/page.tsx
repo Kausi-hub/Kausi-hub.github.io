@@ -135,7 +135,7 @@ function FeaturedProjectCard({ project }: CardProps) {
     <article className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-900">
       <div className="p-6">
         <div className="mb-3 flex flex-wrap items-center gap-3">
-          <h3 className="text-xl">{project.title}</h3>
+          <h3 className="text-lg">{project.title}</h3>
           {project.href && (
             <Link
               href={project.href}

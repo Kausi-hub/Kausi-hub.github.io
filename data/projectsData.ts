@@ -19,7 +19,7 @@ const projectsData: Project[] = [
   status: 'Active',
 
   highlight:
-    'AI-powered requirements quality assessment platform.',
+    'Requirements quality assessment Framework.',
 
   description: `
 Overview:
@@ -62,13 +62,13 @@ Impact:
 },
 
 {
-  title: 'Autonomous Driving Validation Framework',
+  title: 'Autonomous Systems Release Readiness',
   category: 'Validation & Autonomous systems',
   featured: true,
   status: 'Research',
 
   highlight:
-    'Research platform for validating and verifying release readiness of aunomous systems.',
+    'Platform for validating release readiness.',
 
   description: `
 Overview:
@@ -99,7 +99,7 @@ Impact:
   status: 'Research',
 
   highlight:
-    'Research platform for developing and validating battery thermal management strategies.',
+    'Platform for developing and validating battery thermal strategies.',
 
   description: `
 Overview:
