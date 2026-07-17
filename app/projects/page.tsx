@@ -68,13 +68,6 @@ export default function ProjectsPage() {
         </aside>
 
         <main className="min-w-0 flex-1">
-          <header className="mb-16">
-            <h1 className="mb-4 text-5xl font-bold tracking-tight">Engineering Projects</h1>
-            <p className="max-w-4xl text-lg text-gray-600 dark:text-gray-300">
-              A collection of systems engineering, controls, machine learning, reliability, data
-              analytics and automation projects.
-            </p>
-          </header>
 
           <section id="featured" className="mb-24">
             <div className="mb-10">
