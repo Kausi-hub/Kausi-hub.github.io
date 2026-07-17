@@ -76,14 +76,12 @@ export default function ProjectsPage() {
                 into the detailed further down.
               </p>
             </div>
-
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
               {featuredProjects.map((project) => (
                 <FeaturedProjectCard key={project.title} project={project} />
               ))}
             </div>
           </section>
-
           <section
             id="all-projects"
             className="mb-20 border-t border-gray-200 pt-16 dark:border-gray-700"
@@ -150,7 +148,6 @@ function FeaturedProjectCard({ project }: CardProps) {
         </div>
 
         <p className="mb-6 text-gray-600 dark:text-gray-300">{project.highlight}</p>
-
         <div className="flex flex-wrap gap-3">
           <a
             href={`#${projectId}`}
