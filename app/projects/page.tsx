@@ -152,11 +152,6 @@ function FeaturedProjectCard({ project }: CardProps) {
         <p className="mb-6 text-gray-600 dark:text-gray-300">{project.highlight}</p>
 
         <div className="flex flex-wrap gap-3">
-          {project.status && (
-            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
-              {project.status}
-            </span>
-          )}
           <a
             href={`#${projectId}`}
             className="rounded-lg border border-gray-300 px-4 py-2 font-medium hover:bg-gray-100 dark:border-gray-600 dark:hover:bg-gray-800"
