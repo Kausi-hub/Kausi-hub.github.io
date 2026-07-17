@@ -72,7 +72,8 @@ export default function ProjectsPage() {
             <div className="mb-10">
               <h2 className="mb-3 text-2xl font-bold">Featured Projects</h2>
               <p className="max-w-xl text-lg text-gray-600 dark:text-gray-300">
-                Highlights of my most impactful engineering projects. Explore the previews and jump into the detailed further down.
+                Highlights of my most impactful engineering projects. Explore the previews and jump
+                into the detailed further down.
               </p>
             </div>
 
