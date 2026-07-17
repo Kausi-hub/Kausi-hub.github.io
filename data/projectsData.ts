@@ -19,7 +19,7 @@ const projectsData: Project[] = [
   status: 'Active',
 
   highlight:
-    'AI-powered requirements quality assessment platform that automatically identifies ambiguity, incompleteness, and compliance gaps while generating objective requirement quality scores.',
+    'AI-powered requirements quality assessment platform.',
 
   description: `
 Overview:
@@ -99,7 +99,7 @@ Impact:
   status: 'Research',
 
   highlight:
-    'Research platform for developing and validating battery thermal management strategies using virtual cooling system simulations and fault diagnostics.',
+    'Research platform for developing and validating battery thermal management strategies.',
 
   description: `
 Overview:
@@ -144,7 +144,7 @@ Impact:
   status: 'Research',
 
   highlight:
-    'Machine learning model that predicts power semiconductor degradation from thermal stress data to enable reliability forecasting and predictive maintenance.',
+    'Machine learning model that predicts power semiconductor degradation.',
 
   description: `
 Overview:
@@ -188,7 +188,7 @@ Impact:
   status: 'Active',
 
   highlight:
-    'End-to-end motor control engineering environment supporting simulation, PID optimization, stability analysis, requirements validation, and automated reporting.',
+    'End-to-end motor control engineering environment.',
 
   description: `
 Overview:
@@ -234,7 +234,7 @@ Impact:
   status: 'Active',
 
   highlight:
-    'End-to-end motor control engineering environment supporting simulation, PID optimization, stability analysis, requirements validation, and automated reporting.',
+    'End-to-end motor control engineering environment.',
 
   description: `
 Overview:
@@ -269,7 +269,7 @@ Impact: Faster controls development and Improved design iteration speed
   status: 'Active',
 
   highlight:
-    'Automated test-data correlation platform that detects anomalies across multiple manufacturing and EOL test sources.',
+    'Automated test-data correlation platform.',
 
   description: `
 Overview:
