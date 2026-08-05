@@ -133,7 +133,7 @@ Impact:
     'C++'
   ],
 
-  imgSrc: '/static/images/motorcontrols.png',
+  imgSrc: '/static/images/thermalcontroller.png',
   href: 'https://evbatterythermalmanagementcontroller-dash.streamlit.app/',
   repo: 'https://github.com/Kausi-hub/EV_Battery_Thermal_Management_Controller.git'
 },
