@@ -97,7 +97,7 @@ Impact:
     'Python, SQL, ROS, Streamlit'
   ],
 
-  imgSrc: '',
+  imgSrc: '/static/images/AVreadiness.png',
   href: 'https://autonomousmetrics-ks.streamlit.app/',
   repo: 'https://github.com/Kausi-hub/Autonomous_Driving_Metrics.git'
 },
