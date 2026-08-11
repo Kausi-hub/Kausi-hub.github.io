@@ -63,7 +63,7 @@ Impact:
 
 {
   title: 'Autonomous Systems Release Readiness',
-  category: 'Validation & Autonomous systems',
+  category: 'AI & Systems Engineering',
   featured: true,
   status: 'Research',
 
@@ -81,7 +81,7 @@ Developed a framework for product managers and release engineers to quickly comp
 • MIL
 • SIL
 • HIL
-Vehicle Fleet
+• Vehicle Fleet
 
 Impact:
 • ingests ROS2 bag data, stores experiment results
@@ -94,7 +94,7 @@ Impact:
     'Validation Framework',
     'Simulation',
     'Release Management',
-    'Python, SQL, ROS, Streamlit'
+    'Python, ROS, Streamlit'
   ],
 
   imgSrc: '/static/images/AVreadiness.png',
