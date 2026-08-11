@@ -74,6 +74,15 @@ Impact:
 Overview:
 An autonomy validation framework that ingests ROS2 bag data, stores experiment results, computes KPIs, performs statistical significance testing.
 
+Problem:
+Product release engineers need to spend significant time to develop a framewok for release readiness from existing verification and validation data to ensure seamless release of autonomous systems.
+Solution:
+Developed a framework for product managers and release engineers to quickly compile data from V&V releases across different test stages techniques:
+• MIL
+• SIL
+• HIL
+Vehicle Fleet
+
 Impact:
 • ingests ROS2 bag data, stores experiment results
 • applies release-gate safety logic
